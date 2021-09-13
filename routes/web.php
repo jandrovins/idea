@@ -13,8 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name("home.index");
+Route::get('/index', 'App\Http\Controllers\HomeController@index')->name('home.index');
 
-Auth::routes();
+//Lesson Routes
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/lesson/show/', 'App\Http\Controllers\LessonController@show')->name('lesson.show');
+Route::get('/lesson/create/{cId}', 'App\Http\Controllers\LessonController@create')->name('lesson.create');
+Route::post('/lesson/save/', 'App\Http\Controllers\LessonController@save')->name('lesson.save');
+Route::post('/lesson/remove/{id}', 'App\Http\Controllers\LessonController@remove')->name('lesson.remove');
+Route::get('/lesson/showFullLesson{id}', 'App\Http\Controllers\LessonController@showFullLesson')->name('lesson.showFullLesson');
