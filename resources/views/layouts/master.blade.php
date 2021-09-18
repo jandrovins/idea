@@ -1,34 +1,46 @@
 <!doctype html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <title>@yield('title','Idea')</title>
     <!-- Styles -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="{{ asset('css/customStyle.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/sideBar.css') }}" rel="stylesheet"><!--CHANGE-->
     <link rel="icon" type="image/x-icon" href="{{ asset('/img/idea_logo.ico') }}" />
 </head>
+
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-                        <!-- Future Left Side Links --> 
-                    </ul>
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Future authentication Links -->           
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
+        <div class="sidebar-container">
+            <ul class="sidebar-navigation">
+                <li class="header">@lang('lang.nav')</li>
+                <li>
+                    <a href="{{route('home.index')}}">
+                        <i class="fa fa-home" aria-hidden="true"></i> @lang('lang.home')
+                    </a>
+                </li>
+                <li class="header">@lang('lang.student_opt')</li>
+                <li>
+                    <a href="{{route('lesson.show')}}">
+                        <i class="fa fa-home" aria-hidden="true"></i> @lang('lang.show_lesson_bttn')
+                    </a>
+                </li>
+                <li class="header">@lang('lang.instructor_opt')</li>
+                <li>
+                    <a href="{{route('lesson.create',0)}}">
+                        <i class="fa fa-home" aria-hidden="true"></i> @lang('lang.create_lesson_bttn')
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('lesson.manage')}}">
+                        <i class="fa fa-home" aria-hidden="true"></i> @lang('lang.manage_lesson')
+                    </a>
+                </li>
+            </ul>
+        </div>
         <main class="py-4">
             @yield('content')
         </main>

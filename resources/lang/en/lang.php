@@ -1,4 +1,5 @@
 <?php
+
 //Author: Adrian Alberto Gutierrez Leal
 
 return [
@@ -7,9 +8,12 @@ return [
     'lesson_show_header' => 'Lessons for this Topic',
     'nav' => 'Navigation',
     'home' => 'Home',
+    'student_opt' => 'Student Options',
+    'instructor_opt' => 'Instructor Options',
     //Buttons
-    'create_lesson_bttn'=>'Create Lessons',
-    'show_lesson_bttn'=>'See All Lessons',
+    'create_lesson_bttn'=>'Create Lesson',
+    'show_lesson_bttn'=>'My Lessons',
+    'manage_lesson'=>'Manage Lessons',
     'delete_bttn'=> 'Delete',
     'back_bttn' => 'Back',
     'sort_bttn' => 'Sort',
@@ -17,8 +21,8 @@ return [
     'more_bttn' => 'More',
     'submit_bttn' => 'Done!!!',
     //Form vals
-    'id_asc' => 'Lesser ID',
-    'id_desc' => 'Greater ID',
+    'id_asc' => 'First Added',
+    'id_desc' => 'Last Added',
     //Model Labels
     'title_label' => 'Title',
     'body_label' => 'Body',

@@ -1,4 +1,5 @@
 <?php
+
 //Author: Adrian Alberto Gutierrez Leal
 
 namespace App\Http\Controllers;
@@ -33,6 +34,33 @@ class LessonController extends Controller
         }
 
         return view('lesson.show')->with('data', $data);
+    }
+
+    public function manage(Request $request)
+    {
+        $data = []; //to be sent to the view
+        $data['title'] = 'Idea';
+        $data['lessons'] = Lesson::all();
+
+        /*
+        Course Model doesn't exist yet
+        $course = Course::findOrFail($course_id);
+        $data["course"] = $course ->getName();
+        $data["lesson"] = Lesson::where('product_id','=',$course->getId());
+        */
+
+        if ($request->has('sorter')) {
+            switch ($request->get('sorter')) {
+                case 'id_asc':
+                    $data['lessons'] = $data['lessons']->sort();
+                    break;
+                case 'id_desc':
+                    $data['lessons'] = $data['lessons']->sortDesc();
+                    break;
+            }
+        }
+
+        return view('lesson.manage')->with('data', $data);
     }
 
     public function showFullLesson($id)

@@ -3,7 +3,7 @@
     Author: Daan Vankerkom
 -->
 
-<link href="{{ asset('css/adminSideBar.css') }}" rel="stylesheet">
+<link href="{{ asset('css/sideBar.css') }}" rel="stylesheet">
 <div class="sidebar-container">
     <div class="sidebar-logo">
         @lang('lang.admin')

@@ -18,6 +18,7 @@ Route::get('/index', 'App\Http\Controllers\HomeController@index')->name('home.in
 //Lesson Routes
 
 Route::get('/lesson/show/', 'App\Http\Controllers\LessonController@show')->name('lesson.show');
+Route::get('/lesson/manage/', 'App\Http\Controllers\LessonController@manage')->name('lesson.manage');
 Route::get('/lesson/create/{cId}', 'App\Http\Controllers\LessonController@create')->name('lesson.create');
 Route::post('/lesson/save/', 'App\Http\Controllers\LessonController@save')->name('lesson.save');
 Route::post('/lesson/remove/{id}', 'App\Http\Controllers\LessonController@remove')->name('lesson.remove');
