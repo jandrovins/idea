@@ -1,9 +1,12 @@
 <?php
+//Author: Adrian Alberto Gutierrez Leal
 
 return [
     //Headers
     'lesson_manager_header' => 'Content Manager',
     'lesson_show_header' => 'Lessons for this Topic',
+    'nav' => 'Navigation',
+    'home' => 'Home',
     //Buttons
     'create_lesson_bttn'=>'Create Lessons',
     'show_lesson_bttn'=>'See All Lessons',
@@ -24,4 +27,5 @@ return [
     'course_label' => 'Course',
     //Other
     'sort' => 'Sort by',
+    'admin' => 'Admin Menu',
 ];

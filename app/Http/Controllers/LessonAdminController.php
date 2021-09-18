@@ -6,7 +6,7 @@ namespace App\Http\Controllers;
 use App\Models\Lesson;
 use Illuminate\Http\Request;
 
-class LessonController extends Controller
+class LessonAdminController extends Controller
 {
     public function show(Request $request)
     {
@@ -32,7 +32,7 @@ class LessonController extends Controller
             }
         }
 
-        return view('lesson.show')->with('data', $data);
+        return view('admin.lesson.show')->with('data', $data);
     }
 
     public function showFullLesson($id)

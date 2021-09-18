@@ -1,3 +1,5 @@
+<!--Author: Adrian Alberto Gutierrez Leal-->
+
 @extends('layouts.master')
 
 @section("title", $data["title"])

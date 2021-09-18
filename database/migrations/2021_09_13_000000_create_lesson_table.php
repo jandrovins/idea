@@ -1,4 +1,5 @@
 <?php
+//Author: Adrian Alberto Gutierrez Leal
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
