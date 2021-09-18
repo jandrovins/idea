@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="{{ asset('css/customStyle.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/sideBar.css') }}" rel="stylesheet"><!--CHANGE-->
+    <link href="{{ asset('css/sideBar.css') }}" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="{{ asset('/img/idea_logo.ico') }}" />
 </head>
 
@@ -28,7 +28,7 @@
                         <i class="fa fa-home" aria-hidden="true"></i> @lang('lang.show_lesson_bttn')
                     </a>
                 </li>
-                <li class="header">@lang('lang.instructor_opt')</li>
+                <li class="header">@lang('lang.admin_opt')</li>
                 <li>
                     <a href="{{route('lesson.create',0)}}">
                         <i class="fa fa-home" aria-hidden="true"></i> @lang('lang.create_lesson_bttn')

@@ -80,6 +80,17 @@ class LessonController extends Controller
         return redirect()->back()->with('status', 'Lesson Deleted Successfully');
     }
 
+    //FILL
+    public function edit($id)
+    {
+        /*
+        $lesson = Lesson::find($id);
+        $lesson->delete();
+
+        return redirect()->back()->with('status', 'Lesson Deleted Successfully');
+        */
+    }
+
     //course Id, when function is directly called from CourseController
     public function create($course_id)
     {

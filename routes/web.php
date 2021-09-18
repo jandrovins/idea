@@ -22,6 +22,7 @@ Route::get('/lesson/manage/', 'App\Http\Controllers\LessonController@manage')->n
 Route::get('/lesson/create/{cId}', 'App\Http\Controllers\LessonController@create')->name('lesson.create');
 Route::post('/lesson/save/', 'App\Http\Controllers\LessonController@save')->name('lesson.save');
 Route::post('/lesson/remove/{id}', 'App\Http\Controllers\LessonController@remove')->name('lesson.remove');
+Route::post('/lesson/edit/{id}', 'App\Http\Controllers\LessonController@edit')->name('lesson.edit');
 Route::get('/lesson/showFullLesson{id}', 'App\Http\Controllers\LessonController@showFullLesson')->name('lesson.showFullLesson');
 
 //Lesson Admin Routes

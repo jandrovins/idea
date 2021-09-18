@@ -29,12 +29,18 @@
                     <div class="col-md-6 col-lg-4 mb-5">
                         <div class="portfolio-item mx-auto" data-toggle="modal">
                             <!--Delete Lesson from Database-->
+                            <label>{{($loop->index)+1}}. {{$lesson->getTitle()}}</label>
                             <form action="{{ route('lesson.remove',['id'=>$lesson->getId()]) }}" method="POST">
                                 @csrf
-                                <label>{{($loop->index)+1}}. {{$lesson->getTitle()}}</label>
                                 <button type="submit" class="btn btn-danger float-right">
                                     @lang('lang.delete_bttn')
-                                </button>
+                                </button>  
+                            </form>
+                            <form action="{{ route('lesson.edit',['id'=>$lesson->getId()]) }}" method="POST"> <!--CHANGE-->
+                                @csrf
+                                <button type="submit" class="btn btn-primary">
+                                    @lang('lang.edit_bttn')
+                                </button> 
                             </form>
                         </div>
                     </div>
@@ -44,6 +50,7 @@
         </div>
     </div>
 </div>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 @endsection
