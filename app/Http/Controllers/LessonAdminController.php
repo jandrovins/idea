@@ -36,13 +36,41 @@ class LessonAdminController extends Controller
         return view('admin.lesson.show')->with('data', $data);
     }
 
-    public function showFullLesson($id)
+    public function manage(Request $request)
     {
-        $lesson = Lesson::findOrFail($id);
-        $data['title'] = $lesson->getTitle();
-        $data['lesson'] = $lesson;
+        $data = []; //to be sent to the view
+        $data['title'] = 'Idea';
+        $data['lessons'] = Lesson::all();
 
-        return view('lesson.showFullLesson')->with('data', $data);
+        /*
+        Course Model doesn't exist yet
+        $course = Course::findOrFail($course_id);
+        $data["course"] = $course ->getName();
+        $data["lesson"] = Lesson::where('product_id','=',$course->getId());
+        */
+
+        if ($request->has('sorter')) {
+            switch ($request->get('sorter')) {
+                case 'id_asc':
+                    $data['lessons'] = $data['lessons']->sort();
+                    break;
+                case 'id_desc':
+                    $data['lessons'] = $data['lessons']->sortDesc();
+                    break;
+            }
+        }
+
+        return view('admin.lesson.manage')->with('data', $data);
+    }
+
+    public function edit($id)
+    {
+        /*
+        $lesson = Lesson::find($id);
+        $lesson->delete();
+
+        return redirect()->back()->with('status', 'Lesson Deleted Successfully');
+        */
     }
 
     public function remove($id)
@@ -64,7 +92,7 @@ class LessonAdminController extends Controller
         */
         $data['course'] = $course_id; //$course->getId()
 
-        return view('lesson.create')->with('data', $data);
+        return view('admin.lesson.create')->with('data', $data);
     }
 
     public function save(Request $request)

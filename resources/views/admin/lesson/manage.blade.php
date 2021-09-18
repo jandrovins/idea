@@ -11,7 +11,7 @@
             <div class="card">
                 <div class="card-header">@lang('lang.lesson_show_header')</div>
                 <!--Sort Button-->
-                <form action="{{route('lesson.manage')}}" method="GET">
+                <form action="{{route('admin.lesson.manage')}}" method="GET">
                     <div class="toolbar-sorter">
                         <span>@lang('lang.sort')</span>
                         <select name="sorter" class="sorter-options" style="width:150px; " data-role="sorter">
@@ -30,13 +30,13 @@
                         <div class="portfolio-item mx-auto" data-toggle="modal">
                             <!--Delete Lesson from Database-->
                             <label>{{($loop->index)+1}}. {{$lesson->getTitle()}}</label>
-                            <form action="{{ route('lesson.remove',['id'=>$lesson->getId()]) }}" method="POST">
+                            <form action="{{ route('admin.lesson.remove',['id'=>$lesson->getId()]) }}" method="POST">
                                 @csrf
                                 <button type="submit" class="btn btn-danger float-right">
                                     @lang('lang.delete_bttn')
                                 </button>  
                             </form>
-                            <form action="{{ route('lesson.edit',['id'=>$lesson->getId()]) }}" method="POST"> <!--CHANGE-->
+                            <form action="{{ route('admin.lesson.edit',['id'=>$lesson->getId()]) }}" method="POST"> <!--CHANGE-->
                                 @csrf
                                 <button type="submit" class="btn btn-primary">
                                     @lang('lang.edit_bttn')

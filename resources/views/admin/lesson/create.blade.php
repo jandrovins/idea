@@ -12,7 +12,7 @@
                 <div class="card-header">{{ $data["title"] }}</div>
                 @include('util.message')
                 <div class="card-body">
-                    <form method="POST" action="{{ route('lesson.save') }}">
+                    <form method="POST" action="{{ route('admin.lesson.save') }}">
                         @csrf
                         @if($data["course"]!=NULL)
                         <label>@lang('lang.course_label')</label>

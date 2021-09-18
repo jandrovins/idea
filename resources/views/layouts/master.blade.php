@@ -30,12 +30,12 @@
                 </li>
                 <li class="header">@lang('lang.admin_opt')</li>
                 <li>
-                    <a href="{{route('lesson.create',0)}}">
+                    <a href="{{route('admin.lesson.create',0)}}">
                         <i class="fa fa-home" aria-hidden="true"></i> @lang('lang.create_lesson_bttn')
                     </a>
                 </li>
                 <li>
-                    <a href="{{route('lesson.manage')}}">
+                    <a href="{{route('admin.lesson.manage')}}">
                         <i class="fa fa-home" aria-hidden="true"></i> @lang('lang.manage_lesson')
                     </a>
                 </li>

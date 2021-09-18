@@ -18,13 +18,13 @@ Route::get('/index', 'App\Http\Controllers\HomeController@index')->name('home.in
 //Lesson Routes
 
 Route::get('/lesson/show/', 'App\Http\Controllers\LessonController@show')->name('lesson.show');
-Route::get('/lesson/manage/', 'App\Http\Controllers\LessonController@manage')->name('lesson.manage');
-Route::get('/lesson/create/{cId}', 'App\Http\Controllers\LessonController@create')->name('lesson.create');
-Route::post('/lesson/save/', 'App\Http\Controllers\LessonController@save')->name('lesson.save');
-Route::post('/lesson/remove/{id}', 'App\Http\Controllers\LessonController@remove')->name('lesson.remove');
-Route::post('/lesson/edit/{id}', 'App\Http\Controllers\LessonController@edit')->name('lesson.edit');
 Route::get('/lesson/showFullLesson{id}', 'App\Http\Controllers\LessonController@showFullLesson')->name('lesson.showFullLesson');
 
 //Lesson Admin Routes
 
 Route::get('admin/lesson/show/', 'App\Http\Controllers\LessonAdminController@show')->name('admin.lesson.show');
+Route::get('admin/lesson/manage/', 'App\Http\Controllers\LessonAdminController@manage')->name('admin.lesson.manage');
+Route::get('admin/lesson/create/{cId}', 'App\Http\Controllers\LessonAdminController@create')->name('admin.lesson.create');
+Route::post('admin/lesson/save/', 'App\Http\Controllers\LessonAdminController@save')->name('admin.lesson.save');
+Route::post('admin/lesson/remove/{id}', 'App\Http\Controllers\LessonAdminController@remove')->name('admin.lesson.remove');
+Route::post('admin/lesson/edit/{id}', 'App\Http\Controllers\LessonAdminController@edit')->name('admin.lesson.edit');
