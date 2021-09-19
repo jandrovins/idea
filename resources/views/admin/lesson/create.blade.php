@@ -17,23 +17,23 @@
                         @if($data["course"]!=NULL)
                         <label>@lang('lang.course_label')</label>
                         <br>
-                        <input type="text" placeholder="Enter id" name="course_id" placeholder="Short Title"
+                        <input type="text" placeholder="Enter id" name="course_id" placeholder=""
                             value="{{$data["course"]}}" />
                             <!--Course could be a selection from courses where the user is the author-->
                         <br>
                         @else
                         <label>@lang('lang.course_label')</label>
                         <br>
-                        <input type="text" placeholder="Enter id" name="course_id" placeholder="Short Title" />
+                        <input type="text" placeholder="Enter id" name="course_id" placeholder="" />
                         <br>
                         @endif
                         <label>@lang('lang.title_label')</label>
                         <br>
-                        <input type="text" placeholder="Enter title" name="title" placeholder="Short Title" />
+                        <input type="text" placeholder="Enter title" name="title" placeholder="" />
                         <br>
                         <label>@lang('lang.body_label')</label>
                         <br>
-                        <textarea name="body" placeholder="Brief Description" cols="100" rows="5"> </textarea>
+                        <textarea name="body" placeholder="" cols="100" rows="5"> </textarea>
                         <input type="submit" value="@lang('lang.submit_bttn')" />
                     </form>
                 </div>

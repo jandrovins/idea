@@ -65,12 +65,19 @@ class LessonAdminController extends Controller
 
     public function edit($id)
     {
-        /*
-        $lesson = Lesson::find($id);
-        $lesson->delete();
+        $data = []; //to be sent to the view
+        $data['title'] = 'Idea';
+        $data['lessons'] = Lesson::findOrFail($id);
 
-        return redirect()->back()->with('status', 'Lesson Deleted Successfully');
-        */
+        return view('admin.lesson.edit')->with('data', $data);
+    }
+
+    public function update(Request $request)
+    {
+        Lesson::validate($request);
+        Lesson::update($request->only(['title', 'body', 'course_id']));
+
+        return redirect()->back()->with('status', 'Student Updated Successfully');
     }
 
     public function remove($id)
