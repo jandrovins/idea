@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/index', 'App\Http\Controllers\HomeController@index')->name('home.index');
+Route::get('/', [HomeController::class, 'index'])->name('home.index');
 
 //Lesson Routes
 
@@ -29,3 +33,8 @@ Route::post('admin/lesson/save/', 'App\Http\Controllers\LessonAdminController@sa
 Route::post('admin/lesson/remove/{id}', 'App\Http\Controllers\LessonAdminController@remove')->name('admin.lesson.remove');
 Route::post('admin/lesson/edit/{id}', 'App\Http\Controllers\LessonAdminController@edit')->name('admin.lesson.edit');
 Route::post('admin/lesson/update/', 'App\Http\Controllers\LessonAdminController@update')->name('admin.lesson.update');
+
+// Routes for courses
+Route::get('/courses/create', [CourseController::class, 'create'])->name('courses.create');
+
+Route::post('/courses/save', [CourseController::class, 'save'])->name('courses.save');
