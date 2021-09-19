@@ -28,4 +28,4 @@ Route::get('admin/lesson/create/{cId}', 'App\Http\Controllers\LessonAdminControl
 Route::post('admin/lesson/save/', 'App\Http\Controllers\LessonAdminController@save')->name('admin.lesson.save');
 Route::post('admin/lesson/remove/{id}', 'App\Http\Controllers\LessonAdminController@remove')->name('admin.lesson.remove');
 Route::post('admin/lesson/edit/{id}', 'App\Http\Controllers\LessonAdminController@edit')->name('admin.lesson.edit');
-Route::post('admin/lesson/update/', 'App\Http\Controllers\LessonAdminController@edit')->name('admin.lesson.edit');
+Route::post('admin/lesson/update/', 'App\Http\Controllers\LessonAdminController@update')->name('admin.lesson.update');

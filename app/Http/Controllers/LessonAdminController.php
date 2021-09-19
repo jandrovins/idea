@@ -75,7 +75,6 @@ class LessonAdminController extends Controller
     public function update(Request $request)
     {
         Lesson::validate($request);
-        Lesson::update($request->only(['title', 'body', 'course_id']));
 
         return redirect()->back()->with('status', 'Student Updated Successfully');
     }
