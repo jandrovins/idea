@@ -12,14 +12,12 @@
                 <div class="card-header">{{ $data["title"] }}</div>
                 @include('util.message')
                 <div class="card-body">
-                    <form method="POST" action="{{ route('admin.lesson.update') }}">
+                    <form method="POST" action="{{ route('admin.lesson.update',['id'=>$data['lesson']->getId()])}}">
                         @csrf
-                        <input type="text" placeholder="Enter id" name="course_id" placeholder="{{$data['lesson']->getCourseId()}}" />
-                        <br>
-                        @endif
+                        <input type="hidden" name="course_id" value="{{$data['lesson']->getCourseId()}}" />
                         <label>@lang('lang.title_label')</label>
                         <br>
-                        <input type="text" placeholder="Enter title" name="title" placeholder="{{$data['lesson']->getTitle()}}" />
+                        <input type="text" name="title" placeholder="{{$data['lesson']->getTitle()}}" />
                         <br>
                         <label>@lang('lang.body_label')</label>
                         <br>

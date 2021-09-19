@@ -63,30 +63,6 @@ class LessonAdminController extends Controller
         return view('admin.lesson.manage')->with('data', $data);
     }
 
-    public function edit($id)
-    {
-        $data = []; //to be sent to the view
-        $data['title'] = 'Idea';
-        $data['lessons'] = Lesson::findOrFail($id);
-
-        return view('admin.lesson.edit')->with('data', $data);
-    }
-
-    public function update(Request $request)
-    {
-        Lesson::validate($request);
-        //finish
-        return redirect()->back()->with('status', 'Student Updated Successfully');
-    }
-
-    public function remove($id)
-    {
-        $lesson = Lesson::find($id);
-        $lesson->delete();
-
-        return redirect()->back()->with('status', 'Lesson Deleted Successfully');
-    }
-
     //course Id, when function is directly called from CourseController
     public function create($course_id)
     {
@@ -107,5 +83,30 @@ class LessonAdminController extends Controller
         Lesson::create($request->only(['title', 'body', 'course_id']));
 
         return redirect()->back()->with('success', 'New Lesson added succesfully!!!');
+    }
+
+    public function edit($id)
+    {
+        $data = []; //to be sent to the view
+        $data['title'] = 'Idea';
+        $data['lesson'] = Lesson::findOrFail($id);
+        return view('admin.lesson.edit')->with('data', $data);
+    }
+
+    public function update($id,Request $request)
+    {
+        Lesson::validate($request);
+        $lesson=Lesson::findOrFail($id);
+        echo('GOT HERE');
+        $lesson->update($request->all());
+        return redirect()->back()->with('success', 'Lesson Edited Successfully');
+    }
+
+    public function remove($id)
+    {
+        $lesson = Lesson::find($id);
+        $lesson->delete();
+
+        return redirect()->back()->with('success', 'Lesson Deleted Successfully');
     }
 }

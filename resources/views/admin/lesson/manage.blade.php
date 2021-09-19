@@ -36,7 +36,7 @@
                                     @lang('lang.delete_bttn')
                                 </button>  
                             </form>
-                            <form action="{{ route('admin.lesson.edit',['id'=>$lesson->getId()]) }}" method="POST"> <!--CHANGE-->
+                            <form action="{{ route('admin.lesson.edit',['id'=>$lesson->getId()]) }}" method="GET"> <!--CHANGE-->
                                 @csrf
                                 <button type="submit" class="btn btn-primary">
                                     @lang('lang.edit_bttn')
