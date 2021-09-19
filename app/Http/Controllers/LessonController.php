@@ -44,5 +44,4 @@ class LessonController extends Controller
 
         return view('lesson.showFullLesson')->with('data', $data);
     }
-
 }
