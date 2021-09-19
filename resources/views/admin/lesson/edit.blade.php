@@ -9,7 +9,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ $data["title"] }}</div>
+                <div class="card-header">@lang('lang.edit_lesson')</div>
                 @include('util.message')
                 <div class="card-body">
                     <form method="POST" action="{{ route('admin.lesson.update',['id'=>$data['lesson']->getId()])}}">

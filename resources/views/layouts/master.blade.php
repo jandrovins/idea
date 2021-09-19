@@ -24,18 +24,18 @@
                 </li>
                 <li class="header">@lang('lang.student_opt')</li>
                 <li>
-                    <a href="{{route('lesson.show')}}">
+                    <a href="{{route('lesson.show',1)}}">
                         <i class="fa fa-home" aria-hidden="true"></i> @lang('lang.show_lesson_bttn')
                     </a>
                 </li>
                 <li class="header">@lang('lang.admin_opt')</li>
                 <li>
-                    <a href="{{route('admin.lesson.create',0)}}">
+                    <a href="{{route('admin.lesson.create',1)}}">
                         <i class="fa fa-home" aria-hidden="true"></i> @lang('lang.create_lesson_bttn')
                     </a>
                 </li>
                 <li>
-                    <a href="{{route('admin.lesson.manage')}}">
+                    <a href="{{route('admin.lesson.manage',1)}}">
                         <i class="fa fa-home" aria-hidden="true"></i> @lang('lang.manage_lesson')
                     </a>
                 </li>

@@ -9,31 +9,19 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ $data["title"] }}</div>
+                <div class="card-header">@lang('lang.create_lesson'): {{$data['course']->getTitle()}}</div>
                 @include('util.message')
                 <div class="card-body">
                     <form method="POST" action="{{ route('admin.lesson.save') }}">
                         @csrf
-                        @if($data["course"]!=NULL)
-                        <label>@lang('lang.course_label')</label>
-                        <br>
-                        <input type="text" placeholder="Enter id" name="course_id" placeholder=""
-                            value="{{$data["course"]}}" />
-                            <!--Course could be a selection from courses where the user is the author-->
-                        <br>
-                        @else
-                        <label>@lang('lang.course_label')</label>
-                        <br>
-                        <input type="text" placeholder="Enter id" name="course_id" placeholder="" />
-                        <br>
-                        @endif
+                        <input type="hidden"  name="course_id" value="{{$data["course_id"]}}" />
                         <label>@lang('lang.title_label')</label>
                         <br>
-                        <input type="text" placeholder="Enter title" name="title" placeholder="" />
+                        <input type="text"  name="title" placeholder="@lang('lang.title_ph')"/>
                         <br>
                         <label>@lang('lang.body_label')</label>
                         <br>
-                        <textarea name="body" placeholder="" cols="100" rows="5"> </textarea>
+                        <textarea name="body" placeholder="@lang('lang.body_ph')" cols="100" rows="5"> </textarea>
                         <input type="submit" value="@lang('lang.submit_bttn')" />
                     </form>
                 </div>

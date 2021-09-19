@@ -10,6 +10,8 @@ return [
     'home' => 'Home',
     'student_opt' => 'Student Options',
     'admin_opt' => 'Admin Options',
+    'create_lesson'=>'Create Lesson for',
+    'edit_lesson'=>'Edit Lesson',
     //Buttons
     'create_lesson_bttn'=>'Create Lesson',
     'show_lesson_bttn'=>'My Lessons',
@@ -33,4 +35,7 @@ return [
     //Other
     'sort' => 'Sort by',
     'admin' => 'Admin Menu',
+    //Placeholders
+    'title_ph'=>'Dinosaur cloning',
+    'body_ph'=>'This is a lesson about cloning dinosaurs',
 ];

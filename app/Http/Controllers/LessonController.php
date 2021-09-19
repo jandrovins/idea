@@ -9,30 +9,12 @@ use Illuminate\Http\Request;
 
 class LessonController extends Controller
 {
-    public function show(Request $request)
+    public function show($course_id,Request $request)
     {
         $data = []; //to be sent to the view
         $data['title'] = 'Idea';
-        $data['lessons'] = Lesson::all();
-
-        /*
-        Course Model doesn't exist yet
-        $course = Course::findOrFail($course_id);
-        $data["course"] = $course ->getName();
-        $data["lesson"] = Lesson::where('product_id','=',$course->getId());
-        */
-
-        if ($request->has('sorter')) {
-            switch ($request->get('sorter')) {
-                case 'id_asc':
-                    $data['lessons'] = $data['lessons']->sort();
-                    break;
-                case 'id_desc':
-                    $data['lessons'] = $data['lessons']->sortDesc();
-                    break;
-            }
-        }
-
+        $data['lessons'] = Lesson::where('course_id', '=', $course_id)->get();
+        $data['course'] = $data['lessons'][0]->course;
         return view('lesson.show')->with('data', $data);
     }
 
