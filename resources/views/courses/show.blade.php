@@ -36,7 +36,7 @@
                     @else
                     <h6><span class="font-weight-bold">@lang("messages.course.noLessons")</span></h6>
                     @endif
-                    <!-- TODO(): Add code for comments o ratings -->
+                    <!-- TODO(): Add code for comments or ratings -->
                 </div>
             </div>
         </div>
