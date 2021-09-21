@@ -63,6 +63,7 @@ class LessonAdminController extends Controller
         Lesson::validate($request);
         Lesson::create($request->only(['title', 'body', 'course_id']));
 
+        // TODO(): LANG
         return redirect()->back()->with('success', 'New Lesson added succesfully!!!');
     }
 
