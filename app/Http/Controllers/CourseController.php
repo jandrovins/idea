@@ -17,41 +17,29 @@ class CourseController extends Controller
 
         $data = ['title' => 'List of all courses'];
 
+        $courses = Course::paginate(10);
+
         switch ($sort) {
             case 'id_asc':
-                $data['courses'] = Course::all()->sort();
+                $data['courses'] = $courses->sort();
                 break;
             case 'id_desc':
-                $data['courses'] = Course::all()->sortDesc();
+                $data['courses'] = $courses->sortDesc();
                 break;
         }
 
         return view('courses.list')->with('data', $data);
     }
 
-    public function create()
+    public function show($id)
     {
+        $course = Course::with('lessons')->findOrFail($id);
+
         $data = [
-            'title' => 'Create Course',
-            'courses' => Course::all(),
-        ];
+            'title' => $course->getTitle(),
+            'course' => $course,
+        ]; //to be sent to the view
 
-        return view('courses.create')->with('data', $data);
-    }
-
-    public function save(Request $request)
-    {
-        Course::validate($request);
-        Course::create($request->only(['title', 'learningStyles', 'categories', 'price', 'summary']));
-
-        return back()->with('success', 'Course created successfully!');
-    }
-
-    public function delete($id)
-    {
-        $course = Course::findOrFail($id);
-        $course->delete();
-
-        return back()->with('success', 'Course deleted successfully!');
+        return view('courses.show')->with('data', $data);
     }
 }
