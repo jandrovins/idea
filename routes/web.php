@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\CourseAdminController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\HomeController;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\LessonAdminController;
+use App\Http\Controllers\LessonController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,25 +18,34 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/index', 'App\Http\Controllers\HomeController@index')->name('home.index');
-Route::get('/', [HomeController::class, 'index'])->name('home.index');
+// Home Routes
+Route::get('/index', [HomeController::class, 'index'])->name('home.index');
+Route::redirect('/', '/index', 301);
 
-//Lesson Routes
+// Course User Routes
+Route::get('/courses/list', [CourseController::class, 'list'])->name('courses.list');
+Route::get('/courses/show/{id}', [CourseController::class, 'show'])->name('courses.show');
 
-Route::get('/lesson/show/{cId}', 'App\Http\Controllers\LessonController@show')->name('lesson.show');
-Route::get('/lesson/showFullLesson{id}', 'App\Http\Controllers\LessonController@showFullLesson')->name('lesson.showFullLesson');
+//Lesson User Routes
+Route::get('/lesson/show/{cId}', [LessonController::class, 'show'])->name('lesson.show');
+Route::get('/lesson/showFullLesson{id}', [LessonController::class, 'showFullLesson'])->name('lesson.showFullLesson');
 
-//Lesson Admin Routes
+// Admin routes, CRUD
+Route::prefix('admin')->group(function () {
+    // Courses
+    Route::get('/courses/create', [CourseAdminController::class, 'create'])->name('admin.courses.create');
+    Route::get('/courses/list', [CourseAdminController::class, 'list'])->name('admin.courses.list');
+    Route::post('/courses/save', [CourseAdminController::class, 'save'])->name('admin.courses.save');
+    Route::get('/courses/edit/{id}', [CourseAdminController::class, 'edit'])->name('admin.courses.edit');
+    Route::post('/courses/update/{id}', [CourseAdminController::class, 'update'])->name('admin.courses.update');
+    Route::post('/courses/delete/{id}', [CourseAdminController::class, 'delete'])->name('admin.courses.delete');
 
-Route::get('admin/lesson/show/', 'App\Http\Controllers\LessonAdminController@show')->name('admin.lesson.show');
-Route::get('admin/lesson/manage/{cId}', 'App\Http\Controllers\LessonAdminController@manage')->name('admin.lesson.manage');
-Route::get('admin/lesson/create/{cId}', 'App\Http\Controllers\LessonAdminController@create')->name('admin.lesson.create');
-Route::post('admin/lesson/save/', 'App\Http\Controllers\LessonAdminController@save')->name('admin.lesson.save');
-Route::post('admin/lesson/remove/{id}', 'App\Http\Controllers\LessonAdminController@remove')->name('admin.lesson.remove');
-Route::get('admin/lesson/edit/{id}', 'App\Http\Controllers\LessonAdminController@edit')->name('admin.lesson.edit');
-Route::post('admin/lesson/update/{id}', 'App\Http\Controllers\LessonAdminController@update')->name('admin.lesson.update');
-
-// Routes for courses
-Route::get('/courses/create', [CourseController::class, 'create'])->name('courses.create');
-
-Route::post('/courses/save', [CourseController::class, 'save'])->name('courses.save');
+    // Lesson
+    Route::get('/lesson/show/', [LessonAdminController::class, 'show'])->name('admin.lesson.show');
+    Route::get('/lesson/manage/{cId}', [LessonAdminController::class, 'manage'])->name('admin.lesson.manage');
+    Route::get('/lesson/create/{cId}', [LessonAdminController::class, 'create'])->name('admin.lesson.create');
+    Route::post('/lesson/save/', [LessonAdminController::class, 'save'])->name('admin.lesson.save');
+    Route::post('/lesson/remove/{id}', [LessonAdminController::class, 'remove'])->name('admin.lesson.remove');
+    Route::get('/lesson/edit/{id}', [LessonAdminController::class, 'edit'])->name('admin.lesson.edit');
+    Route::post('/lesson/update/{id}', [LessonAdminController::class, 'update'])->name('admin.lesson.update');
+});
