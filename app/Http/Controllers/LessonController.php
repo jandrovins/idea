@@ -9,12 +9,13 @@ use Illuminate\Http\Request;
 
 class LessonController extends Controller
 {
-    public function show($course_id,Request $request)
+    public function show($course_id, Request $request)
     {
         $data = []; //to be sent to the view
         $data['title'] = 'Idea';
         $data['lessons'] = Lesson::where('course_id', '=', $course_id)->get();
         $data['course'] = $data['lessons'][0]->course;
+
         return view('lesson.show')->with('data', $data);
     }
 
