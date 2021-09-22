@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LessonAdminController;
 use App\Http\Controllers\LessonController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,21 +18,27 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//
+Auth::routes();
 
 // Home Routes
 Route::get('/index', [HomeController::class, 'index'])->name('home.index');
 Route::redirect('/', '/index', 301);
+Route::redirect('/home', '/index', 301);
 
-// Course User Routes
-Route::get('/courses/list', [CourseController::class, 'list'])->name('courses.list');
-Route::get('/courses/show/{id}', [CourseController::class, 'show'])->name('courses.show');
+// Auth needed routes
+Route::middleware('auth')->group(function () {
+    // Course User Routes
+    Route::get('/courses/list', [CourseController::class, 'list'])->name('courses.list');
+    Route::get('/courses/show/{id}', [CourseController::class, 'show'])->name('courses.show');
 
-//Lesson User Routes
-Route::get('/lesson/list/{cId}', [LessonController::class, 'list'])->name('lesson.list');
-Route::get('/lesson/show/{id}', [LessonController::class, 'show'])->name('lesson.show');
+    //Lesson User Routes
+    Route::get('/lesson/list/{cId}', [LessonController::class, 'list'])->name('lesson.list');
+    Route::get('/lesson/show/{id}', [LessonController::class, 'show'])->name('lesson.show');
+});
 
 // Admin routes, CRUD
-Route::prefix('admin')->group(function () {
+Route::middleware(['auth', 'isAdmin'])->prefix('admin')->group(function () {
     // Courses
     Route::get('/courses/create', [CourseAdminController::class, 'create'])->name('admin.courses.create');
     Route::get('/courses/list', [CourseAdminController::class, 'list'])->name('admin.courses.list');
