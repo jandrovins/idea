@@ -19,27 +19,43 @@
     <div id="app">
         <div class="sidebar-container">
             <ul class="sidebar-navigation">
-                <li class="header">@lang('lang.nav')</li>
+                <li class="header">@lang('messages.nav')</li>
                 <li>
                     <a href="{{route('home.index')}}">
-                        <i class="fa fa-home" aria-hidden="true"></i> @lang('lang.home')
+                        <i class="fa fa-home" aria-hidden="true"></i> @lang('messages.home')
                     </a>
                 </li>
-                <li class="header">@lang('lang.student_opt')</li>
-                <li>
-                    <a href="{{route('lesson.show',1)}}">
-                        <i class="fa fa-home" aria-hidden="true"></i> @lang('lang.show_lesson_bttn')
-                    </a>
-                </li>
+                <!--TODO() Implement this *whip sound* 
+                {{--@auth('admin')
                 <li class="header">@lang('lang.admin_opt')</li>
+                    <li>
+                        <a href="{{route('admin.lesson.create',1)}}">
+                            <i class="fa fa-home" aria-hidden="true"></i> SOMETHING
+                        </a>
+                    </li>
+                @endauth--}}
+                -->
+                <li class="header">@lang('messages.student_opt')</li>
                 <li>
-                    <a href="{{route('admin.lesson.create',1)}}">
-                        <i class="fa fa-home" aria-hidden="true"></i> @lang('lang.create_lesson_bttn')
+                    <a href="{{route('courses.list')}}">
+                        <i class="fa fa-folder" aria-hidden="true"></i> @lang('messages.course.store')
                     </a>
                 </li>
                 <li>
-                    <a href="{{route('admin.lesson.manage',1)}}">
-                        <i class="fa fa-home" aria-hidden="true"></i> @lang('lang.manage_lesson')
+                    <a href="{{route('courses.list')}}">
+                        <i class="fa fa-folder" aria-hidden="true"></i> @lang('messages.course.enroll')
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('courses.list')}}">
+                        <i class="fa fa-folder" aria-hidden="true"></i> @lang('messages.course.welcome')
+                    </a>
+                </li>
+                <!--Temporary dev navigation bar for admin -->
+                <li class="header">@lang('messages.admin_opt')</li>
+                <li>
+                    <a href="{{route('admin.courses.list')}}">
+                        <i class="fa fa-cog" aria-hidden="true"></i> @lang('messages.course.manage')
                     </a>
                 </li>
             </ul>

@@ -9,20 +9,22 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">@lang('lang.create_lesson'): {{$data['course']->getTitle()}}</div>
+                <div class="card-header">@lang('messages.lesson.create.cardTitle')</div>
                 @include('util.message')
                 <div class="card-body">
                     <form method="POST" action="{{ route('admin.lesson.save') }}">
                         @csrf
                         <input type="hidden"  name="course_id" value="{{$data["course_id"]}}" />
-                        <label>@lang('lang.title_label')</label>
+                        <label>@lang('messages.lesson.title')</label>
                         <br>
-                        <input type="text"  name="title" placeholder="@lang('lang.title_ph')"/>
+                        <input type="text"  name="title" placeholder="@lang('messages.lesson.titlePlaceholder')"/>
                         <br>
-                        <label>@lang('lang.body_label')</label>
+                        <label>@lang('messages.lesson.body')</label>
                         <br>
-                        <textarea name="body" placeholder="@lang('lang.body_ph')" cols="100" rows="5"> </textarea>
-                        <input type="submit" value="@lang('lang.submit_bttn')" />
+                        <textarea name="body"  cols="100" rows="5"> </textarea>
+                        <button type="submit" class="btn btn-primary float-right">
+                            @lang("messages.course.create.submit")
+                        </button>
                     </form>
                 </div>
             </div>

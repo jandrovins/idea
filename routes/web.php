@@ -27,8 +27,8 @@ Route::get('/courses/list', [CourseController::class, 'list'])->name('courses.li
 Route::get('/courses/show/{id}', [CourseController::class, 'show'])->name('courses.show');
 
 //Lesson User Routes
-Route::get('/lesson/show/{cId}', [LessonController::class, 'show'])->name('lesson.show');
-Route::get('/lesson/showFullLesson{id}', [LessonController::class, 'showFullLesson'])->name('lesson.showFullLesson');
+Route::get('/lesson/list/{cId}', [LessonController::class, 'list'])->name('lesson.list');
+Route::get('/lesson/show/{id}', [LessonController::class, 'show'])->name('lesson.show');
 
 // Admin routes, CRUD
 Route::prefix('admin')->group(function () {

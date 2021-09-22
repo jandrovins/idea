@@ -7,26 +7,12 @@ use Illuminate\Http\Request;
 
 class CourseAdminController extends Controller
 {
-    public function list(Request $request)
+    public function list()
     {
-        $sort = 'id_asc';  // default sort value
-
-        if ($request->has('sort')) {
-            $sort = $request->get('sort');
-        }
-
-        $data = ['title' => 'Manage courses'];
-
-        $courses = Course::paginate(10);
-
-        switch ($sort) {
-            case 'id_asc':
-                $data['courses'] = $courses->sort();
-                break;
-            case 'id_desc':
-                $data['courses'] = $courses->sortDesc();
-                break;
-        }
+        $data = [
+            'title' => 'Manage courses',
+            'courses' => Course::with('lessons')->paginate(10),
+        ];
 
         return view('admin.courses.list')->with('data', $data);
     }

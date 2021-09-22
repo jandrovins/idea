@@ -9,31 +9,59 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">@lang('lang.lesson_show_header'): {{$data['course']->getTitle()}}</div>
+                <div class="card-header"></div>
                 <div class="card-body">
-                    <!--Show Everything in DB-->
-                    @foreach($data["lessons"] as $lesson)
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-toggle="modal">
-                            <label>{{($loop->index)+1}}. {{$lesson->getTitle()}}</label>
-                            <form action="{{ route('admin.lesson.remove',['id'=>$lesson->getId()]) }}" method="POST">
-                                @csrf
-                                @include('util.message')
-                                <!--Delete Lesson from Database-->
-                                <button type="submit" class="btn btn-danger float-right">
-                                    @lang('lang.delete_bttn')
-                                </button>  
-                            </form>
-                            <form action="{{ route('admin.lesson.edit',['id'=>$lesson->getId()]) }}" method="GET"> <!--CHANGE-->
-                                @csrf
-                                <!--Edit Lesson in Database-->
-                                <button type="submit" class="btn btn-primary">
-                                    @lang('lang.edit_bttn')
-                                </button> 
-                            </form>
-                        </div>
-                    </div>
-                    @endforeach
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>@lang('messages.lesson.id')</th>
+                                <th>@lang('messages.lesson.title')</th>
+                                <th>@lang('messages.actions')</th>
+                            </tr>
+                            <div class="card-header d-flex justify-content-between align-content-center">
+                                @lang("messages.course.list.admin.lesson")
+                                <form id='add_lesson' action="{{ route('admin.lesson.create',$data['cId']) }}"
+                                    method="get">
+                                    <button type="submit" class="btn btn-sm btn-primary">
+                                        <i class="fa fa-plus"></i>
+                                </form>
+                            </div>
+                        </thead>
+                        <tbody>
+                            @foreach ($data['lessons'] as $lesson)
+                            <tr>
+                                <th scope="row">{{ $lesson->getId() }}</th>
+                                <td>{{ $lesson->getTitle() }}</td>
+                                <td>
+                                    <div class="d-flex flex-row">
+                                        <form 
+                                            action="{{ route('lesson.show', $lesson->getId()) }}"
+                                            method="get">
+                                            <button type="submit" class="btn btn-outline-info mx-1 h-100">
+                                                <i class="fa fa-eye"></i>
+                                            </button>
+                                        </form>
+                                        <form 
+                                        action="{{ route('admin.lesson.edit', $lesson->getId()) }}"
+                                            method="get">
+                                            <button type="submit"
+                                                class="btn btn-outline-warning mx-1 h-100">
+                                                <i class="fa fa-pencil"></i>
+                                            </button>
+                                        </form>
+                                        <form 
+                                            action="{{ route('admin.lesson.remove',['id'=>$lesson->getId()]) }}"
+                                            method="POST">
+                                            @csrf
+                                            <button type="submit" class="btn btn-outline-danger mx-1">
+                                                <i class="fa fa-trash-o"></i>
+                                            </button>
+                                        </form>
+                                        @endforeach
+                                    </div>
+                                </td>
+                            </tr>
+                    </table>
                 </div>
             </div>
         </div>

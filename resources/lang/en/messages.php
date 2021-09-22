@@ -22,6 +22,7 @@ return [
     // Course List Specific
     'course.list.cardTitle' => 'Our Courses',
     'course.list.admin.cardTitle' => 'Manage your courses',
+    'course.list.admin.lesson' => 'Manage your lessons',
 
     // Course Show Specific
     'course.lessons' => 'Lessons for this course',
@@ -31,6 +32,7 @@ return [
     'course.id' => 'Course ID',
     'course.title' => 'Course title',
     'course.titlePlaceholder' => 'Computer Magic',
+    'course.manage' => 'Manage Courses',
     'course.learningStyle' => 'Learning Syle',
     'course.auditory' => 'Auditory',
     'course.kinesthesic' => 'Kinesthesic',
@@ -39,10 +41,38 @@ return [
     'course.price' => 'Price',
     'course.priceUnit' => '&#36;USD',
     'course.summary' => 'Summary',
+    'course.welcome' => 'My Courses',
+    'course.store' => 'Store',
+    'course.enroll' => 'Enroll',
     'course.summaryPlaceholder' => 'Discover the magical interactions between dragons and electrons.',
+
+    // Lesson Create Specific
+    'lesson.create.cardTitle' => 'Create lesson',
+    'lesson.create.success' => 'Lesson created successfully!',
+
+    // Course Delete Specific
+    'lesson.delete.success' => 'Lesson deleted successfully!',
+
+    // Lesson List Specific
+    'lesson.list.cardTitle' => 'Our Lessons',
+    'lesson.show' => 'More',
+
+    // Lesson Edit Specific
+    'lesson.edit.cardTitle' => 'Edit lesson',
+    'lesson.edit.success' => 'Lesson updated successfully!',
+
+    // Lesson General
+    'lesson.id' => 'Lesson ID',
+    'lesson.title' => 'Lesson title',
+    'lesson.body' => 'Lesson body',
+    'lesson.titlePlaceholder' => 'Dinosaur Cloning',
 
     // General usage
     'close' => 'Close',
     'delete' => 'Delete',
     'actions' => 'Actions',
+    'nav' => 'Navigation',
+    'home' => 'Home',
+    'student_opt' => 'Student Options',
+    'admin_opt' => 'Admin Options',
 ];

@@ -26,7 +26,8 @@
                         @csrf
                         <div class="form-group">
                             <label for="title">@lang("messages.course.title")</label>
-                            <input type="text" class="form-control" name="title" placeholder="@lang("messages.course.titlePlaceholder")" value="{{ old('title') }}">
+                            <input type="text" class="form-control" name="title" 
+                            placeholder="@lang("messages.course.titlePlaceholder")" value="{{ old('title') }}">
                         </div>
                         <div class="form-group">
                             <label for="learningStyle">@lang("messages.course.learningStyle")</label>
@@ -38,7 +39,8 @@
                         </div>
                         <div class="form-group">
                             <label for="categories">@lang("messages.course.create.categories")</label>
-                            <input type="text" class="form-control" name="categories" placeholder="@lang("messages.course.create.categoriesPlaceholder")" value="{{ old('categories') }}">
+                            <input type="text" class="form-control" name="categories" 
+                            placeholder="@lang("messages.course.create.categoriesPlaceholder")" value="{{ old('categories') }}">
                         </div>
                         <div class="form-group">
                             <label for="price">@lang("messages.course.price")</label>
@@ -57,8 +59,9 @@
                                 placeholder="@lang("messages.course.summaryPlaceholder")"
                                 value="{{ old('summary') }}"></textarea>
                         </div>
-                        <button type="submit"
-                            class="btn btn-primary float-right">@lang("messages.course.create.submit")</button>
+                        <button type="submit" class="btn btn-primary float-right">
+                            @lang("messages.course.create.submit")
+                        </button>
                     </form>
                 </div>
             </div>

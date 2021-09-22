@@ -11,7 +11,8 @@ class CourseController extends Controller
     {
         $data = [
             'title' => 'List of all courses',
-            'courses' => Course::paginate(10)
+            'courses' => Course::with('lessons')->paginate(10),
+
         ];
 
         return view('courses.list')->with('data', $data);
@@ -23,7 +24,7 @@ class CourseController extends Controller
 
         $data = [
             'title' => $course->getTitle(),
-            'course' => $course
+            'course' => $course,
         ]; //to be sent to the view
 
         return view('courses.show')->with('data', $data);

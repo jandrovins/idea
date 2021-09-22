@@ -49,7 +49,6 @@
                                             <i class="fa fa-trash-o"></i>
                                         </button>
                                     </div>
-
                                     <!-- Modal for delete -->
                                     <div class="modal fade" id="delete-{{ $course->getId() }}" tabindex="-1"
                                         role="dialog" aria-labelledby="modal-delete-label-{{ $course->getId() }}"

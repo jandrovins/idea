@@ -26,13 +26,17 @@
                     <h6><span class="font-weight-bold">@lang("messages.course.price"):</span>
                         {{ $data["course"]->getPrice() }}
                     </h6>
+                    <!--Edited by: Adrian Gutierrez-->
                     @if (!$data["course"]->lessons->isEmpty())
                     <h6><span class="font-weight-bold">@lang("messages.course.lessons"):</span></h6>
-                    <ul class="list-group">
+                    <div class="list-group">
                         @foreach ($data["course"]->lessons as $lesson)
-                        <li class="list-group-item">{{ $lesson->getTitle() }}</li>
+                        <a href="{{ route('lesson.show', $lesson->getId()) }}"
+                            class="list-group-item list-group-item-action">
+                            {{ $lesson->getTitle() }}
+                        </a>
                         @endforeach
-                    </ul>
+                    </div>
                     @else
                     <h6><span class="font-weight-bold">@lang("messages.course.noLessons")</span></h6>
                     @endif

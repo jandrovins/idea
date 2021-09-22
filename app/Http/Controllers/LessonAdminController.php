@@ -36,12 +36,12 @@ class LessonAdminController extends Controller
         return view('admin.lessons.show')->with('data', $data);
     }
 
-    public function manage($course_id, Request $request)
+    public function manage($course_id)
     {
         $data = []; //to be sent to the view
         $data['title'] = 'Idea';
         $data['lessons'] = Lesson::where('course_id', '=', $course_id)->get();
-        $data['course'] = $data['lessons'][0]->course;
+        $data['cId'] = $course_id;
 
         return view('admin.lessons.manage')->with('data', $data);
     }
@@ -53,7 +53,6 @@ class LessonAdminController extends Controller
         $data['title'] = 'Idea';
         $data['course_id'] = $course_id;
         $lessons = Lesson::where('course_id', '=', $course_id)->get();
-        $data['course'] = $lessons[0]->course;
 
         return view('admin.lessons.create')->with('data', $data);
     }
@@ -64,7 +63,7 @@ class LessonAdminController extends Controller
         Lesson::create($request->only(['title', 'body', 'course_id']));
 
         // TODO(): LANG
-        return redirect()->back()->with('success', 'New Lesson added succesfully!!!');
+        return redirect()->back()->with('success', __('messages.lesson.create.success'));
     }
 
     public function edit($id)
@@ -83,7 +82,7 @@ class LessonAdminController extends Controller
         echo 'GOT HERE';
         $lesson->update($request->all());
 
-        return redirect()->back()->with('success', 'Lesson Edited Successfully');
+        return redirect()->back()->with('success', __('messages.lesson.edit.success'));
     }
 
     public function remove($id)
@@ -91,6 +90,6 @@ class LessonAdminController extends Controller
         $lesson = Lesson::find($id);
         $lesson->delete();
 
-        return redirect()->back()->with('success', 'Lesson Deleted Successfully');
+        return redirect()->back()->with('success', __('messages.lesson.delete.success'));
     }
 }

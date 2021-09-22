@@ -9,20 +9,20 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">@lang('lang.edit_lesson')</div>
+                <div class="card-header">@lang('messages.lesson.edit.cardTitle')</div>
                 @include('util.message')
                 <div class="card-body">
                     <form method="POST" action="{{ route('admin.lesson.update',['id'=>$data['lesson']->getId()])}}">
                         @csrf
                         <input type="hidden" name="course_id" value="{{$data['lesson']->getCourseId()}}" />
-                        <label>@lang('lang.title_label')</label>
+                        <label>@lang('messages.lesson.title')</label>
                         <br>
                         <input type="text" name="title" placeholder="{{$data['lesson']->getTitle()}}" />
                         <br>
-                        <label>@lang('lang.body_label')</label>
+                        <label>@lang('messages.lesson.body')</label>
                         <br>
                         <textarea name="body" placeholder="{{$data['lesson']->getBody()}}" cols="100" rows="5"> </textarea>
-                        <input type="submit" value="@lang('lang.submit_bttn')" />
+                        <input type="submit" value="@lang('messages.course.edit.submit')" />
                     </form>
                 </div>
             </div>
