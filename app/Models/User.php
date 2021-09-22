@@ -93,6 +93,16 @@ class User extends Authenticatable
         $this->attributes['phoneNumber'] = $phoneNumber;
     }
 
+    public function getUserKind()
+    {
+        return $this->attributes['userKind'];
+    }
+
+    public function setUserKind($userKind)
+    {
+        $this->attributes['userKind'] = $userKind;
+    }
+
     public function getLearningStyle()
     {
         return $this->attributes['learningStyle'];

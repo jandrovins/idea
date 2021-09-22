@@ -67,6 +67,10 @@ return [
     'lesson.body' => 'Lesson body',
     'lesson.titlePlaceholder' => 'Dinosaur Cloning',
 
+    // User creation
+    'user.dob' => 'Date Of Birth',
+    'user.phoneNum' => 'Phone Number',
+
     // General usage
     'close' => 'Close',
     'delete' => 'Delete',
