@@ -73,42 +73,32 @@ class User extends Authenticatable
         $this->attributes['email'] = $email;
     }
 
-    public function getPassword()
-    {
-        return $this->attributes['password'];
-    }
-
-    public function setPassword($password)
-    {
-        $this->attributes['password'] = $password;
-    }
-
-    public function getDateofbirth()
+    public function getDateOfBirth()
     {
         return $this->attributes['dateOfBirth'];
     }
 
-    public function setDateofbirth($dateOfBirth)
+    public function setDateOfBirth($dateOfBirth)
     {
         $this->attributes['dateOfBirth'] = $dateOfBirth;
     }
 
-    public function getPhonenumber()
+    public function getPhoneNumber()
     {
         return $this->attributes['phoneNumber'];
     }
 
-    public function setPhonenumber($phoneNumber)
+    public function setPhoneNumber($phoneNumber)
     {
         $this->attributes['phoneNumber'] = $phoneNumber;
     }
 
-    public function getLearningstyle()
+    public function getLearningStyle()
     {
         return $this->attributes['learningStyle'];
     }
 
-    public function setLearningstyle($learningStyle)
+    public function setLearningStyle($learningStyle)
     {
         $this->attributes['learningStyle'] = $learningStyle;
     }
