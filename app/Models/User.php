@@ -12,13 +12,16 @@ class User extends Authenticatable
 
     /**
      * The attributes that are mass assignable.
-     *
+     * 
      * @var array
      */
     protected $fillable = [
         'name',
         'email',
         'password',
+        'dateOfBirth',
+        'phoneNumber',
+        'learningStyle',
     ];
 
     /**
@@ -39,4 +42,74 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getId()
+    {
+        return $this->attributes['id'];
+    }
+
+    public function setId($id)
+    {
+        $this->attributes['id'] = $id;
+    }
+
+    public function getName()
+    {
+        return $this->attributes['name'];
+    }
+
+    public function setName($name)
+    {
+        $this->attributes['name'] = $name;
+    }
+
+    public function getEmail()
+    {
+        return $this->attributes['email'];
+    }
+
+    public function setEmail($email)
+    {
+        $this->attributes['email'] = $email;
+    }
+
+    public function getDateOfBirth()
+    {
+        return $this->attributes['dateOfBirth'];
+    }
+
+    public function setDateOfBirth($dateOfBirth)
+    {
+        $this->attributes['dateOfBirth'] = $dateOfBirth;
+    }
+
+    public function getPhoneNumber()
+    {
+        return $this->attributes['phoneNumber'];
+    }
+
+    public function setPhoneNumber($phoneNumber)
+    {
+        $this->attributes['phoneNumber'] = $phoneNumber;
+    }
+
+    public function getUserKind()
+    {
+        return $this->attributes['userKind'];
+    }
+
+    public function setUserKind($userKind)
+    {
+        $this->attributes['userKind'] = $userKind;
+    }
+
+    public function getLearningStyle()
+    {
+        return $this->attributes['learningStyle'];
+    }
+
+    public function setLearningStyle($learningStyle)
+    {
+        $this->attributes['learningStyle'] = $learningStyle;
+    }
 }

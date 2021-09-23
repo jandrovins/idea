@@ -49,10 +49,18 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        /*
+            Stock Validation
+            Modified by: sflorezs1
+            Added missing fields from model
+        */
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'dateOfBirth' => ['required', 'date'],
+            'phoneNumber' => ['required', 'string', 'max:15', 'min:8'],
+            'learningStyle' => ['required', 'alpha']
         ]);
     }
 
@@ -68,6 +76,9 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'dateOfBirth' => $data['dateOfBirth'],
+            'phoneNumber' => $data['phoneNumber'],
+            'learningStyle' => $data['learningStyle']
         ]);
     }
 }
