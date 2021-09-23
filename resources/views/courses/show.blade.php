@@ -1,4 +1,5 @@
-<!--Author: Simon Florez Silva (sflorezs1@eafit.edu.co)-->
+<!--Authors: Simon Florez Silva (sflorezs1@eafit.edu.co), Adrián Gutiérrez (aagutierrl@eafit.edu.co), Vincent Arcila (vaarcilal@eafit.edu.co)-->
+<!--Last edition: September 22 -->
 
 @extends('layouts.master')
 
@@ -26,7 +27,6 @@
                     <h6><span class="font-weight-bold">@lang("messages.course.price"):</span>
                         {{ $data["course"]->getPrice() }}
                     </h6>
-                    <!--Edited by: Adrian Gutierrez-->
                     @if (!$data["course"]->lessons->isEmpty())
                     <h6><span class="font-weight-bold">@lang("messages.course.lessons"):</span></h6>
                     <div class="list-group">

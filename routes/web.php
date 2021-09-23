@@ -1,5 +1,8 @@
 <?php
 
+// Authors: Simón Flórez, Adrián Gutiérrez, Vincent A. Arcila
+// Last edition: September 21, 2021
+
 use App\Http\Controllers\CourseAdminController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\HomeController;
