@@ -6,8 +6,10 @@
 use App\Http\Controllers\CourseAdminController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InscriptionController;
 use App\Http\Controllers\LessonAdminController;
 use App\Http\Controllers\LessonController;
+use App\Http\Controllers\ReviewController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -21,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//
+
 Auth::routes();
 
 // Home Routes
@@ -32,11 +34,16 @@ Route::redirect('/home', '/index', 301);
 // Auth needed routes
 Route::middleware('auth')->group(function () {
     // Course User Routes
-    Route::get('/courses/list', [CourseController::class, 'list'])->name('courses.list');
+    Route::get('/courses/list', [CourseController::class, 'list'])->name('courses.list');  // List courses the logged user is not enrolled in
+    Route::get('/courses/listAll', [CourseController::class, 'listAll'])->name('courses.listAll');  // List all courses
+    Route::get('/courses/listOwn', [CourseController::class, 'listOwn'])->name('courses.listOwn');  // List courses the logged user is enrolled in
     Route::get('/courses/show/{id}', [CourseController::class, 'show'])->name('courses.show');
 
+    // Course Inscription routes
+    Route::post('/course/inscription/enroll', [InscriptionController::class, 'enroll'])->name('inscription.enroll');
+
     // Review User Routes
-    Route::post('/course/review/save', 'App\Http\Controllers\ReviewController@save')->name('review.save');
+    Route::post('/course/review/save', [ReviewController::class, 'save'])->name('review.save');
 
     //Lesson User Routes
     Route::get('/lesson/list/{cId}', [LessonController::class, 'list'])->name('lesson.list');

@@ -35,6 +35,9 @@ return [
     'course.list.cardTitle' => 'Our Courses',
     'course.list.admin.cardTitle' => 'Manage your courses',
     'course.list.admin.lesson' => 'Manage your lessons',
+    'course.list.enroll.failed' => 'Course id=:ID does not exist!',
+    'course.list.enroll.success' => 'Enrolled successfully in course',
+    'course.list.enroll.submit' => 'Enroll',
 
     // Course Show Specific
     'course.lessons' => 'Lessons for this course',
