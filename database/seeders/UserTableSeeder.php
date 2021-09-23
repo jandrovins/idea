@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use App\Models\User;
+use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
 class UserTableSeeder extends Seeder
@@ -15,7 +15,7 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        if(config('admin.admin_name')) {
+        if (config('admin.admin_name')) {
             User::firstOrCreate(
                 ['email' => config('admin.admin_email')], [
                     'name' => config('admin.admin_name'),
@@ -23,7 +23,7 @@ class UserTableSeeder extends Seeder
                     'phoneNumber' => config('admin.admin_phone_num'),
                     'dateOfBirth' => config('admin.admin_dob'),
                     'learningStyle' => config('admin.admin_learning_style'),
-                    'userKind' => 'admin'
+                    'userKind' => 'admin',
                 ]
             );
         }
