@@ -10,8 +10,18 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            @include('util.message')
             <div class="card">
-                <div class="card-header">{{ $data["course"]->getId() }} - {{ $data["course"]->getTitle() }}</div>
+                <div class="card-header d-flex justify-content-between align-content-center">
+                    {{ $data["course"]->getId() }} - {{ $data["course"]->getTitle() }}
+                    
+                    <form action="{{ route('inscription.enroll') }}" method="post">
+                        @csrf
+                        <input type="hidden" id="courseId" name="courseId" value="{{ $data['course']->getId() }}">
+                        <button type="submit" class="btn btn-sm btn-primary">
+                            <i class="fa fa-check"></i> @lang('messages.course.list.enroll.submit')
+                    </form>
+                </div>
                 <div class="card-body">
                     <h5><span class="font-weight-bold">@lang("messages.course.id"):</span>
                         {{ $data["course"]->getId() }}</h5>
@@ -27,6 +37,7 @@
                     <h6><span class="font-weight-bold">@lang("messages.course.price"):</span>
                         {{ $data["course"]->getPrice() }}
                     </h6>
+
                     @if (!$data["course"]->lessons->isEmpty())
                     <h6><span class="font-weight-bold">@lang("messages.course.lessons"):</span></h6>
                     <div class="list-group">
@@ -68,7 +79,6 @@
             <div class="card">
                 <div class="card-header">@lang("messages.course.createReview.cardTitle")</div>
                 <div class="card-body">
-                    @include('util.message')
                     @if($errors->any())
                     <div class="alert alert-warning" role="alert">
                         <ul id="errors">
