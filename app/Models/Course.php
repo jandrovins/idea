@@ -2,11 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
 class Course extends Model
 {
+    use HasFactory;
     /*
         attributes id, title, learningStyles, lessons, categories, author (non-primitive TODO()),
         created_at, price, summary, introImage (non-primitive TODO())
@@ -91,5 +93,10 @@ class Course extends Model
     public function lessons()
     {
         return $this->hasMany(Lesson::class);
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
     }
 }

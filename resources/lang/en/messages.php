@@ -10,6 +10,18 @@ return [
     'course.create.submit' => 'Create',
     'course.create.success' => 'Course created successfully!',
 
+    // Course Reviews Specific
+    'course.createReview.cardTitle' => 'Create review',
+    'course.createReview.submit' => 'Create',
+    'course.createReview.success' => 'Review created!',
+    'course.createReview.commentPlaceholder' => 'Very good course!',
+    'course.review.comment' => 'Comment',
+    'course.review.rating' => 'Rating',
+    'course.review.user' => 'User',
+    'course.reviews' => 'Reviews',
+    'course.hasReviews' => 'Reviews for this course',
+    'course.hasNoReviews' => 'There are no reviews for this course yet.',
+
     // Course Delete Specific
     'course.delete.success' => 'Course deleted successfully!',
     'course.delete.asksure' => 'Are you sure you want to delete this course? This will delete all the registered lessons too.',
@@ -67,10 +79,6 @@ return [
     'lesson.body' => 'Lesson body',
     'lesson.titlePlaceholder' => 'Dinosaur Cloning',
 
-    // User creation
-    'user.dob' => 'Date Of Birth',
-    'user.phoneNum' => 'Phone Number',
-
     // General usage
     'close' => 'Close',
     'delete' => 'Delete',
@@ -79,4 +87,9 @@ return [
     'home' => 'Home',
     'student_opt' => 'Student Options',
     'admin_opt' => 'Admin Options',
+
+    // User
+    'user.dob' => 'Date Of Birth',
+    'user.phoneNum' => 'Phone Number',
+
 ];
