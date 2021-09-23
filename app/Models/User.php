@@ -12,7 +12,7 @@ class User extends Authenticatable
 
     /**
      * The attributes that are mass assignable.
-     * 
+     *
      * @var array
      */
     protected $fillable = [
@@ -111,5 +111,15 @@ class User extends Authenticatable
     public function setLearningStyle($learningStyle)
     {
         $this->attributes['learningStyle'] = $learningStyle;
+    }
+
+    public function inscriptions()
+    {
+        return $this->hasMany(Inscription::class);
+    }
+
+    public function courses()
+    {
+        return $this->hasMany(Course::class);
     }
 }

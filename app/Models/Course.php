@@ -90,6 +90,11 @@ class Course extends Model
         ]);
     }
 
+    public function inscriptions()
+    {
+        return $this->hasMany(Inscription::class);
+    }
+
     public function lessons()
     {
         return $this->hasMany(Lesson::class);
@@ -98,5 +103,10 @@ class Course extends Model
     public function reviews()
     {
         return $this->hasMany(Review::class);
+    }
+
+    public function author()
+    {
+        return $this->belongsTo(User::class);
     }
 }
