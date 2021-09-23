@@ -5,8 +5,8 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LessonAdminController;
 use App\Http\Controllers\LessonController;
-use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +31,9 @@ Route::middleware('auth')->group(function () {
     // Course User Routes
     Route::get('/courses/list', [CourseController::class, 'list'])->name('courses.list');
     Route::get('/courses/show/{id}', [CourseController::class, 'show'])->name('courses.show');
+
+    // Review User Routes
+    Route::post('/course/review/save', 'App\Http\Controllers\ReviewController@save')->name('review.save');
 
     //Lesson User Routes
     Route::get('/lesson/list/{cId}', [LessonController::class, 'list'])->name('lesson.list');
