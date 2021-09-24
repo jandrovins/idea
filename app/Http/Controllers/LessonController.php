@@ -30,9 +30,7 @@ class LessonController extends Controller
     public function createPDF($id)
     {
         //retrieve same data as show
-        $lesson = Lesson::findOrFail($id);
-        $data['title'] = $lesson->getTitle();
-        $data['lesson'] = $lesson;
+        $data['lesson'] = Lesson::findOrFail($id);
         // share data to view
         view()->share('data', $data);
         $pdf = PDF::loadView('lesson.showpdf', $data);
