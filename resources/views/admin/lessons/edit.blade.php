@@ -21,7 +21,7 @@
                         <br>
                         <label>@lang('messages.lesson.body')</label>
                         <br>
-                        <textarea name="body" placeholder="{{$data['lesson']->getBody()}}" cols="100" rows="5"> </textarea>
+                        <textarea name="body" placeholder="{{$data['lesson']->getBody()}}" cols="90" rows="5"> </textarea>
                         <input type="submit" value="@lang('messages.course.edit.submit')" />
                     </form>
                 </div>
