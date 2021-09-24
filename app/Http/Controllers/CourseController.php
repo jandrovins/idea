@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\Inscription;
 use Illuminate\Support\Facades\Auth;
 
 class CourseController extends Controller
@@ -16,7 +17,7 @@ class CourseController extends Controller
         $courses = Course::with('lessons')->whereNotIn('id', $userCourses)->paginate(10);
 
         $data = [
-            'title' => 'List of all courses',
+            'title' => 'Courses',
             'courses' => $courses,
         ];
 
@@ -42,7 +43,7 @@ class CourseController extends Controller
         $courses = Course::with('lessons')->whereIn('id', $userCourses)->paginate(10);
 
         $data = [
-            'title' => 'List of all courses',
+            'title' => 'My courses',
             'courses' => $courses,
         ];
 
@@ -51,11 +52,16 @@ class CourseController extends Controller
 
     public function show($id)
     {
-        $course = Course::with('lessons')->findOrFail($id);
+        $userId = Auth::user()->getId();
+        $course = Course::with(['lessons', 'author'])->findOrFail($id);
+        $courseId = $course->getId();
 
         $data = [
             'title' => $course->getTitle(),
             'course' => $course,
+            'isEnrolled' => Inscription::where([
+                ['user_id', '=', $userId], ['course_id', '=', $courseId],
+            ])->exists(),
         ];
 
         return view('courses.show')->with('data', $data);
