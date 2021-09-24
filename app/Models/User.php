@@ -10,6 +10,10 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
+    /* Attributes id, name, email, dateOfBirth, phoneNumber,
+        lerningStyle, userKind, email_verified_at, password,
+        created_at, updated_at, remember_token
+    */
     /**
      * The attributes that are mass assignable.
      *
@@ -19,6 +23,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'dateOfBirth',
+        'phoneNumber',
+        'learningStyle',
     ];
 
     /**
@@ -39,4 +46,84 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getId()
+    {
+        return $this->attributes['id'];
+    }
+
+    public function setId($id)
+    {
+        $this->attributes['id'] = $id;
+    }
+
+    public function getName()
+    {
+        return $this->attributes['name'];
+    }
+
+    public function setName($name)
+    {
+        $this->attributes['name'] = $name;
+    }
+
+    public function getEmail()
+    {
+        return $this->attributes['email'];
+    }
+
+    public function setEmail($email)
+    {
+        $this->attributes['email'] = $email;
+    }
+
+    public function getDateOfBirth()
+    {
+        return $this->attributes['dateOfBirth'];
+    }
+
+    public function setDateOfBirth($dateOfBirth)
+    {
+        $this->attributes['dateOfBirth'] = $dateOfBirth;
+    }
+
+    public function getPhoneNumber()
+    {
+        return $this->attributes['phoneNumber'];
+    }
+
+    public function setPhoneNumber($phoneNumber)
+    {
+        $this->attributes['phoneNumber'] = $phoneNumber;
+    }
+
+    public function getUserKind()
+    {
+        return $this->attributes['userKind'];
+    }
+
+    public function setUserKind($userKind)
+    {
+        $this->attributes['userKind'] = $userKind;
+    }
+
+    public function getLearningStyle()
+    {
+        return $this->attributes['learningStyle'];
+    }
+
+    public function setLearningStyle($learningStyle)
+    {
+        $this->attributes['learningStyle'] = $learningStyle;
+    }
+
+    public function inscriptions()
+    {
+        return $this->hasMany(Inscription::class);
+    }
+
+    public function courses()
+    {
+        return $this->hasMany(Course::class);
+    }
 }
