@@ -33,6 +33,7 @@ Route::redirect('/home', '/index', 301);
 Route::middleware('auth')->group(function () {
     // Course User Routes
     Route::get('/courses/list', [CourseController::class, 'list'])->name('courses.list');
+    Route::get('/courses/listTop', [CourseController::class, 'listTop'])->name('courses.listTop');
     Route::get('/courses/show/{id}', [CourseController::class, 'show'])->name('courses.show');
 
     // Review User Routes
