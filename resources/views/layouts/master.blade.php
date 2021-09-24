@@ -37,7 +37,7 @@
                 -->
                 <li class="header">@lang('messages.student_opt')</li>
                 <li>
-                    <a href="{{route('courses.list')}}">
+                    <a href="{{route('courses.listAll')}}">
                         <i class="fa fa-folder" aria-hidden="true"></i> @lang('messages.course.store')
                     </a>
                 </li>
@@ -47,7 +47,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{route('courses.list')}}">
+                    <a href="{{route('courses.listOwn')}}">
                         <i class="fa fa-folder" aria-hidden="true"></i> @lang('messages.course.welcome')
                     </a>
                 </li>

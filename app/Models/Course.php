@@ -13,7 +13,7 @@ class Course extends Model
         attributes id, title, learningStyles, lessons, categories, author (non-primitive TODO()),
         created_at, price, summary, introImage (non-primitive TODO())
     */
-    protected $fillable = ['title', 'learningStyle', 'categories', 'price', 'summary', 'lesson_id'];
+    protected $fillable = ['title', 'learningStyle', 'categories', 'author', 'price', 'summary', 'lesson_id'];
 
     public function getId()
     {
@@ -90,6 +90,11 @@ class Course extends Model
         ]);
     }
 
+    public function inscriptions()
+    {
+        return $this->hasMany(Inscription::class);
+    }
+
     public function lessons()
     {
         return $this->hasMany(Lesson::class);
@@ -98,5 +103,10 @@ class Course extends Model
     public function reviews()
     {
         return $this->hasMany(Review::class);
+    }
+
+    public function author()
+    {
+        return $this->belongsTo(User::class);
     }
 }
