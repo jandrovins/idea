@@ -10,6 +10,10 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
+    /* Attributes id, name, email, dateOfBirth, phoneNumber,
+        lerningStyle, userKind, email_verified_at, password,
+        created_at, updated_at, remember_token
+    */
     /**
      * The attributes that are mass assignable.
      *

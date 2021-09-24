@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Inscription extends Model
 {
-    //
+    // Attributes id, user_id, course_id, progress, created_at, updated_at
     protected $fillable = ['user_id', 'course_id', 'progress'];
 
     public function getId()
