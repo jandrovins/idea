@@ -14,6 +14,9 @@
                 <div class="card-header">@lang("messages.course.list.cardTitle")</div>
                 <div class="card-body">
                     <div class="list-group">
+                        @if (count($data["courses"]) === 0)
+                            @lang("messages.course.list.noCoursesToList")
+                        @endif
                         @foreach ($data["courses"] as $course)
                         <a href="{{ route('courses.show', $course->getId()) }}"
                             class="list-group-item list-group-item-action">

@@ -33,6 +33,7 @@ return [
 
     // Course List Specific
     'course.list.cardTitle' => 'Our Courses',
+    'course.list.noCoursesToList' => 'There are no courses to list',
     'course.list.admin.cardTitle' => 'Manage your courses',
     'course.list.admin.lesson' => 'Manage your lessons',
 
