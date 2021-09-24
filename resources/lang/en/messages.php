@@ -1,6 +1,6 @@
 <?php
 
-// Author: Simon Florez Silva (sflorezs1@gmail.com)
+// Authors: Simon Florez Silva (sflorezs1@gmail.com), Vincent Arcila (vaarcilal@eafit.edu.co)
 
 return [
     // Course Create Specific
@@ -35,6 +35,13 @@ return [
     'course.list.cardTitle' => 'Our Courses',
     'course.list.admin.cardTitle' => 'Manage your courses',
     'course.list.admin.lesson' => 'Manage your lessons',
+
+    // Course List Top Specific
+    'course.listTop' => 'Top courses',
+    'course.listTop.cardTitle' => 'Our top rated courses',
+    'course.listTop.noCoursesWithReviews' => 'There are no courses with reviews.',
+    'course.listTop.onlyOneCourseWithReviews' => 'There is only one course with reviews.',
+    'course.listTop.notEnoughCoursesWithReviews' => ' There are only :count_courses courses with reviews.',
 
     // Course Show Specific
     'course.lessons' => 'Lessons for this course',

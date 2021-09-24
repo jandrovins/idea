@@ -51,6 +51,11 @@
                         <i class="fa fa-folder" aria-hidden="true"></i> @lang('messages.course.welcome')
                     </a>
                 </li>
+                <li>
+                    <a href="{{route('courses.listTop')}}">
+                        <i class="fa fa-folder" aria-hidden="true"></i> @lang('messages.course.listTop')
+                    </a>
+                </li>
                 <!--Temporary dev navigation bar for admin -->
                 <li class="header">@lang('messages.admin_opt')</li>
                 <li>
