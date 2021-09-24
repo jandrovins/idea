@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -23,52 +23,6 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="learningStyle" class="col-md-4 col-form-label text-md-right">@lang("messages.course.learningStyle")</label>
-                            <div class="col-md-6">
-                                <select class="custom-select form-control" name="learningStyle" value="{{ old('learningStyle') }}">
-                                    <option value="auditory">@lang("messages.course.auditory")</option>
-                                    <option value="kinesthesic">@lang("messages.course.kinesthesic")</option>
-                                    <option value="visual">@lang("messages.course.visual")</option>
-                                </select>
-                            </div>
-
-                            @error('learningStyle')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-
-                        <div class="form-group row"> 
-                            <label for="datepicker" class="col-md-4 col-form-label text-md-right">@lang("messages.user.dob")</label>
-                            
-                            <div class="input-group col-md-6"> 
-                                <input id="datepicker" type="date" 
-                                    class="date form-control @error('dateOfBirth') is-invalid @enderror" name="dateOfBirth" 
-                                    value="{{ old('dateOfBirth') }}" required autofocus> 
-                                @error('dateOfBirth') 
-                                    <span class="invalid-feedback" role="alert"> 
-                                        <strong>{{ $message }}</strong> 
-                                    </span> 
-                                @enderror 
-                            </div> 
-                        </div> 
-
-                        <div class="form-group row"> 
-                            <label for="phoneNumber" class="col-md-4 col-form-label text-md-right">@lang("messages.user.phoneNum")</label>
-                            <div class="input-group col-md-6"> 
-                                <input id="phoneNumber" type="text" 
-                                    class="form-control @error('phoneNumber') is-invalid @enderror" name="phoneNumber" 
-                                    value="{{ old('phoneNumber') }}" required autocomplete="phoneNumber" autofocus> 
-                                @error('phoneNumber') 
-                                    <span class="invalid-feedback" role="alert"> 
-                                        <strong>{{ $message }}</strong> 
-                                    </span> 
-                                @enderror 
-                            </div> 
                         </div>
 
                         <div class="form-group row">
