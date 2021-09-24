@@ -5,6 +5,7 @@
 
 use App\Http\Controllers\CourseAdminController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\HomeAdminController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InscriptionController;
 use App\Http\Controllers\LessonAdminController;
@@ -50,8 +51,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/lesson/show/{id}', [LessonController::class, 'show'])->name('lesson.show');
 });
 
-// Admin routes, CRUD
+// Admin routes
 Route::middleware(['auth', 'isAdmin'])->prefix('admin')->group(function () {
+    // Dashboard
+    Route::get('/index', [HomeAdminController::class, 'index'])->name('admin.home.index');
+
     // Courses
     Route::get('/courses/create', [CourseAdminController::class, 'create'])->name('admin.courses.create');
     Route::get('/courses/list', [CourseAdminController::class, 'list'])->name('admin.courses.list');
