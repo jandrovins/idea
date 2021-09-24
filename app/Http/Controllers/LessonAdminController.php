@@ -46,7 +46,6 @@ class LessonAdminController extends Controller
         return view('admin.lessons.manage')->with('data', $data);
     }
 
-    //course Id, when function is directly called from CourseController
     public function create($course_id)
     {
         $data = [];
@@ -62,7 +61,6 @@ class LessonAdminController extends Controller
         Lesson::validate($request);
         Lesson::create($request->only(['title', 'body', 'course_id']));
 
-        // TODO(): LANG
         return redirect()->back()->with('success', __('messages.lesson.create.success'));
     }
 
