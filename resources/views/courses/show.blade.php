@@ -65,6 +65,7 @@
                 </div>
             </div>
         </div>
+            @if ( $data['isEnrolled'] )
             <div class="card">
                 <div class="card-header">@lang("messages.course.createReview.cardTitle")</div>
                 <div class="card-body">
@@ -100,6 +101,7 @@
                 </div>
             </div>
         </div>
+        @endif
     </div>
 </div>
 @endsection
