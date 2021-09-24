@@ -42,6 +42,7 @@ Route::middleware('auth')->group(function () {
 
     // Course Inscription routes
     Route::post('/course/inscription/enroll', [InscriptionController::class, 'enroll'])->name('inscription.enroll');
+    Route::post('/course/inscription/leave', [InscriptionController::class, 'leave'])->name('inscription.leave');
 
     // Review User Routes
     Route::post('/course/review/save', [ReviewController::class, 'save'])->name('review.save');
