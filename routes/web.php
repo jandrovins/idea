@@ -50,6 +50,7 @@ Route::middleware('auth')->group(function () {
     //Lesson User Routes
     Route::get('/lesson/list/{cId}', [LessonController::class, 'list'])->name('lesson.list');
     Route::get('/lesson/show/{id}', [LessonController::class, 'show'])->name('lesson.show');
+    Route::get('/lesson/createPDF/{id}', [LessonController::class, 'createPDF'])->name('lesson.createPDF');
 });
 
 // Admin routes

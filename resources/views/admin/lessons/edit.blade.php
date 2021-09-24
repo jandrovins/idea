@@ -8,9 +8,9 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            @include('util.message')
             <div class="card">
                 <div class="card-header">@lang('messages.lesson.edit.cardTitle')</div>
-                @include('util.message')
                 <div class="card-body">
                     <form method="POST" action="{{ route('admin.lesson.update',['id'=>$data['lesson']->getId()])}}">
                         @csrf
@@ -21,7 +21,7 @@
                         <br>
                         <label>@lang('messages.lesson.body')</label>
                         <br>
-                        <textarea name="body" placeholder="{{$data['lesson']->getBody()}}" cols="100" rows="5"> </textarea>
+                        <textarea name="body" placeholder="{{$data['lesson']->getBody()}}" cols="90" rows="5"> </textarea>
                         <input type="submit" value="@lang('messages.course.edit.submit')" />
                     </form>
                 </div>
