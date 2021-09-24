@@ -5,8 +5,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Lesson;
-use Illuminate\Http\Request;
-use \PDF;
+use PDF;
 
 class LessonController extends Controller
 {
@@ -24,19 +23,21 @@ class LessonController extends Controller
         $lesson = Lesson::findOrFail($id);
         $data['title'] = $lesson->getTitle();
         $data['lesson'] = $lesson;
+
         return view('lesson.show')->with('data', $data);
     }
 
-    public function createPDF($id) {
+    public function createPDF($id)
+    {
         //retrieve same data as show
         $lesson = Lesson::findOrFail($id);
         $data['title'] = $lesson->getTitle();
         $data['lesson'] = $lesson;
         // share data to view
-        view()->share('data',$data);
-        $pdf = PDF::loadView('lesson.showpdf',$data);
-  
+        view()->share('data', $data);
+        $pdf = PDF::loadView('lesson.showpdf', $data);
+
         // download PDF file with download method
         return $pdf->download('lesson.pdf');
-      }
+    }
 }

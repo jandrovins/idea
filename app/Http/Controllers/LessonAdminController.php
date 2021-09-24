@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class LessonAdminController extends Controller
 {
-    public function show(Request $request)
+    public function show()
     {
         $data = []; //to be sent to the view
         $data['title'] = 'Idea';
@@ -21,17 +21,6 @@ class LessonAdminController extends Controller
         $data["course"] = $course ->getName();
         $data["lesson"] = Lesson::where('product_id','=',$course->getId());
         */
-
-        if ($request->has('sorter')) {
-            switch ($request->get('sorter')) {
-                case 'id_asc':
-                    $data['lessons'] = $data['lessons']->sort();
-                    break;
-                case 'id_desc':
-                    $data['lessons'] = $data['lessons']->sortDesc();
-                    break;
-            }
-        }
 
         return view('admin.lessons.show')->with('data', $data);
     }
@@ -51,7 +40,6 @@ class LessonAdminController extends Controller
         $data = [];
         $data['title'] = 'Idea';
         $data['course_id'] = $course_id;
-        $lessons = Lesson::where('course_id', '=', $course_id)->get();
 
         return view('admin.lessons.create')->with('data', $data);
     }
@@ -77,7 +65,6 @@ class LessonAdminController extends Controller
     {
         Lesson::validate($request);
         $lesson = Lesson::findOrFail($id);
-        echo 'GOT HERE';
         $lesson->update($request->all());
 
         return redirect()->back()->with('success', __('messages.lesson.edit.success'));
