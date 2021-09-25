@@ -3,6 +3,9 @@
 // Authors: Simon Florez Silva (sflorezs1@gmail.com), Vincent Arcila (vaarcilal@eafit.edu.co)
 
 return [
+    // Error 404 page Specific
+    'error.404.title' => 'Error 404 - Page not found',
+
     // Course Create Specific
     'course.create.cardTitle' => 'Create course',
     'course.create.categories' => 'Categories (comma-separated)',
