@@ -64,6 +64,20 @@
                     </a>
                 </li>
             </ul>
+        </ul>
+        <ul class="sidebar-navigation sidebar-footer">
+            @guest
+            <li class="header"> Hello guest.</li>
+            <li><a href="{{ route('login') }}">@lang('messages.auth.login')</a></li>
+            <li><a href="{{ route('register') }}">@lang('messages.auth.register')</a></li>
+            @else
+            <li class="header">Hello {{ Auth::user()->getName() }}</li>
+            <li><a href="" onclick="event.preventDefault();logout.submit();">@lang('messages.auth.logout')</a></li>
+            <form id="logout" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+            </form>
+            @endguest
+        </ul>
         </div>
         <main class="py-4">
             @yield('content')
