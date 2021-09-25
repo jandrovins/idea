@@ -135,13 +135,13 @@
                     <div class="form-group">
                         <label for="rating">@lang("messages.course.review.rating")</label>
                         <input type="number" class="form-control" name="rating" min="0" max="10" placeholder=10
-                            value="{{ old('title') }}">
+                            value="{{ old('rating') }}">
                     </div>
                     <div class="form-group">
                         <label for="comment">@lang("messages.course.review.comment")</label>
-                        <textarea class="form-control" name="comment" rows="5" placeholder="@lang("
-                            messages.course.createReview.commentPlaceholder")" value="{{ old('comment') }}">
-                            </textarea>
+                        <textarea class="form-control" name="comment" rows="5" 
+                            placeholder="@lang("messages.course.createReview.commentPlaceholder")"
+                            value="{{ old('comment') }}"></textarea>
                     </div>
                     <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                     <input type="hidden" name="course_id" value="{{  $data['course']->getId() }}">
