@@ -76,7 +76,7 @@ class CourseController extends Controller
         $courses = Course::has('reviews')->withAvg('reviews', 'rating')->orderBy('reviews_avg_rating', 'desc')->take(3)->get();
 
         $data = [
-            'title' => 'Our top rated courses',
+            'title' => __('messages.course.listTop'),
             'courses' => $courses,
         ];
 
