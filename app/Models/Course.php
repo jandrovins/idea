@@ -10,10 +10,10 @@ class Course extends Model
 {
     use HasFactory;
     /*
-        attributes id, title, learningStyles, lessons, categories, author (non-primitive TODO()),
-        created_at, price, summary, introImage (non-primitive TODO())
+        attributes id, title, learningStyles, lessons, categories, author,
+        created_at, price, summary
     */
-    protected $fillable = ['title', 'learningStyle', 'categories', 'author', 'price', 'summary', 'lesson_id'];
+    protected $fillable = ['title', 'learningStyle', 'categories', 'author_id', 'price', 'summary'];
 
     public function getId()
     {
