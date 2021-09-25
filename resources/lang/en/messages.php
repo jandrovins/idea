@@ -3,6 +3,11 @@
 // Authors: Simon Florez Silva (sflorezs1@gmail.com), Vincent Arcila (vaarcilal@eafit.edu.co)
 
 return [
+    // Auth user specific
+    'auth.login' => 'Log In',
+    'auth.register' => 'Register',
+    'auth.logout' => 'Log Out',
+
     // Error 404 page Specific
     'error.404.title' => 'Error 404 - Page not found',
 
