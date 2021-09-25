@@ -9,7 +9,6 @@ use Illuminate\Http\Request;
 
 class LessonAdminController extends Controller
 {
-
     public function create($course_id)
     {
         $data = [];

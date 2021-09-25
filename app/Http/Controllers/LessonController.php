@@ -9,7 +9,6 @@ use PDF;
 
 class LessonController extends Controller
 {
-
     public function show($id)
     {
         $lesson = Lesson::findOrFail($id);
