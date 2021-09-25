@@ -1,5 +1,4 @@
 <!--Authors: Vincent Arcila (vaarcilal@eafit.edu.co)-->
-@if ( $data['isEnrolled'] )
 <div class="card">
     <div class="card-header">@lang("messages.course.createReview.cardTitle")</div>
     <div class="card-body">
@@ -25,7 +24,7 @@
                     placeholder="@lang("messages.course.createReview.commentPlaceholder")"
                     value="{{ old('comment') }}"></textarea>
             </div>
-            <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+            <input type="hidden" name="user_id" value="{{ Auth::user()->getId() }}">
             <input type="hidden" name="course_id" value="{{  $data['course']->getId() }}">
             <button type="submit" class="btn btn-primary float-right">
                 @lang("messages.course.create.submit")
@@ -33,4 +32,3 @@
         </form>
     </div>
 </div>
-@endif

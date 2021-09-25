@@ -112,7 +112,9 @@
                 </div>
             </div>
         </div>
-        @include ('courses.createReview')
+        @if ( $data['isEnrolled'] )
+            @include ('courses.createReview')
+        @endif
     </div>
 </div>
 </div>
