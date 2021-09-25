@@ -9,17 +9,7 @@ use Illuminate\Http\Request;
 
 class LessonAdminController extends Controller
 {
-
-    public function manage($course_id)
-    {
-        $data = []; //to be sent to the view
-        $data['title'] = __('messages.lesson.manage.title');  
-        $data['lessons'] = Lesson::where('course_id', '=', $course_id)->get();
-        $data['cId'] = $course_id;
-
-        return view('admin.lessons.manage')->with('data', $data);
-    }
-
+    
     public function create($course_id)
     {
         $data = []; //to be sent to the view
