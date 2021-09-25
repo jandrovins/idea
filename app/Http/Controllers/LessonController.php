@@ -9,15 +9,6 @@ use PDF;
 
 class LessonController extends Controller
 {
-    public function list($course_id)
-    {
-        $data = []; //to be sent to the view
-        $data['title'] = 'Idea';
-        $data['lessons'] = Lesson::where('course_id', '=', $course_id)->get();
-
-        return view('lesson.list')->with('data', $data);
-    }
-
     public function show($id)
     {
         $lesson = Lesson::findOrFail($id);
