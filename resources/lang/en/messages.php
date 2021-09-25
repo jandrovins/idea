@@ -102,6 +102,9 @@ return [
     'lesson.body' => 'Lesson body',
     'lesson.titlePlaceholder' => 'Dinosaur Cloning',
 
+    // Home Admin Specific
+    'admin.index.title' => 'Admin console',
+
     // General usage
     'close' => 'Close',
     'delete' => 'Delete',
