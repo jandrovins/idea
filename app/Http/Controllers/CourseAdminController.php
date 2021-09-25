@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Course;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class CourseAdminController extends Controller
 {
@@ -47,7 +46,7 @@ class CourseAdminController extends Controller
         $course = Course::with('lessons')->findOrFail($id);
 
         $data = [
-            'title' => __('messages.course.edit.cardTitle'). ': ' . $course->getTitle(),
+            'title' => __('messages.course.edit.cardTitle').': '.$course->getTitle(),
             'course' => $course,
         ];
 
