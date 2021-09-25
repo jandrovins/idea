@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Course;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CourseAdminController extends Controller
 {
@@ -21,7 +22,6 @@ class CourseAdminController extends Controller
     {
         $data = [
             'title' => 'Create Course',
-            'courses' => Course::all(),
         ];
 
         return view('admin.courses.create')->with('data', $data);
@@ -30,7 +30,11 @@ class CourseAdminController extends Controller
     public function save(Request $request)
     {
         Course::validate($request);
-        Course::create($request->only(['title', 'learningStyle', 'categories', 'price', 'summary']));
+
+        $data = $request->only(['title', 'learningStyle', 'categories', 'price', 'summary']);
+        $data['author'] = Auth::user()->getId();
+
+        Course::create($data);
 
         return back()->with('success', __('messages.course.create.success'));
     }

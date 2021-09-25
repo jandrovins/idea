@@ -33,6 +33,7 @@ return [
 
     // Course List Specific
     'course.list.cardTitle' => 'Our Courses',
+    'course.list.noCoursesToList' => 'There are no courses to list',
     'course.list.admin.cardTitle' => 'Manage your courses',
     'course.list.admin.lesson' => 'Manage your lessons',
 
@@ -43,6 +44,15 @@ return [
     'course.listTop.onlyOneCourseWithReviews' => 'There is only one course with reviews.',
     'course.listTop.notEnoughCoursesWithReviews' => ' There are only :count_courses courses with reviews.',
 
+    // Course Enroll Specific
+    'course.enroll.failed' => 'Course id=:ID does not exist!',
+    'course.enroll.success' => 'Enrolled successfully in course',
+    'course.enroll.leave.success' => 'Left the course successfully',
+    'course.enroll.noCourseId' => 'No course Id was given',
+    'course.enroll.submit' => 'Enroll',
+    'course.enroll.leave' => 'Leave',
+    'course.enroll.leave.asksure' => 'Are you sure you want to leave this course? This will erase all your progress. You will not be refunded your credits',
+
     // Course Show Specific
     'course.lessons' => 'Lessons for this course',
     'course.noLessons' => 'There are no lessons for this course yet.',
@@ -50,6 +60,7 @@ return [
     // Course General
     'course.id' => 'Course ID',
     'course.title' => 'Course title',
+    'course.author' => 'Author',
     'course.titlePlaceholder' => 'Computer Magic',
     'course.manage' => 'Manage Courses',
     'course.learningStyle' => 'Learning Syle',

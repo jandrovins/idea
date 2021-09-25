@@ -10,9 +10,16 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ $data["lesson"]->getTitle() }}</div>
+                <div class="card-header">
+                    <form action="{{ route('lesson.createPDF', $data["lesson"]->getId()) }}" method="get">
+                        <button type="submit" class="btn btn-primary float-right">
+                            <i class="fa fa-download"></i>
+                        </button>
+                    </form>
+                    {{ $data["lesson"]->getTitle() }}
+                </div>
                 <div class="card-body">
-                    <p class="card=text"> {{ $data["lesson"]->getBody() }} </p>
+                    <p class="card-text"> {{ $data["lesson"]->getBody() }} </p>
                 </div>
             </div>
         </div>

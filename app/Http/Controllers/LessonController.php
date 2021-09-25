@@ -5,6 +5,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Lesson;
+use PDF;
 
 class LessonController extends Controller
 {
@@ -13,7 +14,6 @@ class LessonController extends Controller
         $data = []; //to be sent to the view
         $data['title'] = 'Idea';
         $data['lessons'] = Lesson::where('course_id', '=', $course_id)->get();
-        $data['course'] = $data['lessons'][0]->course;
 
         return view('lesson.list')->with('data', $data);
     }
@@ -25,5 +25,17 @@ class LessonController extends Controller
         $data['lesson'] = $lesson;
 
         return view('lesson.show')->with('data', $data);
+    }
+
+    public function createPDF($id)
+    {
+        //retrieve same data as show
+        $data['lesson'] = Lesson::findOrFail($id);
+        // share data to view
+        view()->share('data', $data);
+        $pdf = PDF::loadView('lesson.showpdf', $data);
+
+        // download PDF file with download method
+        return $pdf->download('lesson.pdf');
     }
 }
