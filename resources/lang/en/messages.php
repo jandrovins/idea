@@ -35,8 +35,10 @@ return [
     'course.edit.submit' => 'Update',
 
     // Course List Specific
-    'course.list.cardTitle' => 'Our Courses',
     'course.list.noCoursesToList' => 'There are no courses to list',
+    'course.list.all' => 'List of all courses',
+    'course.list.own' => 'My courses',
+    'course.list.available' => 'Our Courses',
     'course.list.admin.cardTitle' => 'Manage your courses',
     'course.list.admin.lesson' => 'Manage your lessons',
 
@@ -48,7 +50,7 @@ return [
     'course.listTop.notEnoughCoursesWithReviews' => ' There are only :count_courses courses with reviews.',
 
     // Course Enroll Specific
-    'course.enroll.failed' => 'Course id=:ID does not exist!',
+    'course.enroll.failed' => 'Course :id does not exist!',
     'course.enroll.success' => 'Enrolled successfully in course',
     'course.enroll.leave.success' => 'Left the course successfully',
     'course.enroll.noCourseId' => 'No course Id was given',

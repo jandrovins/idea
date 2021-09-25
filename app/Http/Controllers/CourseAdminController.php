@@ -11,7 +11,7 @@ class CourseAdminController extends Controller
     public function list()
     {
         $data = [
-            'title' => 'Manage courses',
+            'title' => __('messages.course.list.admin.cardTitle'),
             'courses' => Course::with('lessons')->paginate(10),
         ];
 
@@ -20,9 +20,7 @@ class CourseAdminController extends Controller
 
     public function create()
     {
-        $data = [
-            'title' => 'Create Course',
-        ];
+        $data = ['title' => __('messages.course.create.cardTitle')];
 
         return view('admin.courses.create')->with('data', $data);
     }
@@ -52,7 +50,7 @@ class CourseAdminController extends Controller
         $course = Course::with('lessons')->findOrFail($id);
 
         $data = [
-            'title' => 'Edit '.$course->getTitle(),
+            'title' => __('messages.course.edit.cardTitle'). ': ' . $course->getTitle(),
             'course' => $course,
         ];
 
