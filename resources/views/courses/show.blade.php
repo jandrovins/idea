@@ -1,16 +1,11 @@
 <!--Authors: Simon Florez Silva (sflorezs1@eafit.edu.co), Adrián Gutiérrez (aagutierrl@eafit.edu.co), Vincent Arcila (vaarcilal@eafit.edu.co)-->
-<!--Last edition: September 22 -->
-
 @extends('layouts.master')
-
 @section("title", $data["title"])
-
 @section('content')
-
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            @include('util.message')
+            @include ('util.message')
             <div class="card">
                 <div class="card-header d-flex justify-content-between align-content-center">
                     {{ $data["course"]->getId() }} - {{ $data["course"]->getTitle() }}
@@ -108,6 +103,9 @@
                 @endif
             </div>
         </div>
+        @if ( $data['isEnrolled'] )
+            @include ('courses.createReview')
+        @endif
     </div>
     @if ( $data['isEnrolled'] )
     <div class="card">
