@@ -12,7 +12,7 @@ class LessonController extends Controller
     public function list($course_id)
     {
         $data = []; //to be sent to the view
-        $data['title'] = 'Idea';
+        $data['title'] = __('messages.lesson.list.title'); 
         $data['lessons'] = Lesson::where('course_id', '=', $course_id)->get();
 
         return view('lesson.list')->with('data', $data);

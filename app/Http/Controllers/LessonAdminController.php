@@ -9,26 +9,11 @@ use Illuminate\Http\Request;
 
 class LessonAdminController extends Controller
 {
-    public function show()
-    {
-        $data = []; //to be sent to the view
-        $data['title'] = 'Idea';
-        $data['lessons'] = Lesson::all();
-
-        /*
-        Course Model doesn't exist yet
-        $course = Course::findOrFail($course_id);
-        $data["course"] = $course ->getName();
-        $data["lesson"] = Lesson::where('product_id','=',$course->getId());
-        */
-
-        return view('admin.lessons.show')->with('data', $data);
-    }
 
     public function manage($course_id)
     {
         $data = []; //to be sent to the view
-        $data['title'] = 'Idea';
+        $data['title'] = __('messages.lesson.manage.title');  
         $data['lessons'] = Lesson::where('course_id', '=', $course_id)->get();
         $data['cId'] = $course_id;
 
@@ -37,8 +22,8 @@ class LessonAdminController extends Controller
 
     public function create($course_id)
     {
-        $data = [];
-        $data['title'] = 'Idea';
+        $data = []; //to be sent to the view
+        $data['title'] = __('messages.lesson.create.title');;
         $data['course_id'] = $course_id;
 
         return view('admin.lessons.create')->with('data', $data);
@@ -55,7 +40,7 @@ class LessonAdminController extends Controller
     public function edit($id)
     {
         $data = []; //to be sent to the view
-        $data['title'] = 'Idea';
+        $data['title'] = __('messages.lesson.edit.title');
         $data['lesson'] = Lesson::findOrFail($id);
 
         return view('admin.lessons.edit')->with('data', $data);
