@@ -118,6 +118,8 @@ return [
     'nav' => 'Navigation',
     'home' => 'Home',
     'student_opt' => 'Student Options',
+    'hello' => 'Hello',
+    'guest' => 'guest',
 
     // User
     'user.dob' => 'Date Of Birth',
