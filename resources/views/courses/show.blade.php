@@ -79,14 +79,12 @@
                     <h6><span class="font-weight-bold">@lang("messages.course.price"):</span>
                         {{ $data["course"]->getPrice() }}
                     </h6>
-
                     @if (!$data["course"]->lessons->isEmpty())
                     @include('lesson.list')
                 </div>
                 @else
                 <h6><span class="font-weight-bold">@lang("messages.course.noLessons")</span></h6>
                 @endif
-
             </div>
         </div>
         <div class="card">
