@@ -31,10 +31,7 @@ class CourseAdminController extends Controller
     {
         Course::validate($request);
 
-        $data = $request->only(['title', 'learningStyle', 'categories', 'price', 'summary']);
-        $data['author_id'] = Auth::user()->getId();
-
-        Course::create($data);
+        Course::create($request->only(['title', 'learningStyle', 'categories', 'author_id', 'price', 'summary']));
 
         return back()->with('success', __('messages.course.create.success'));
     }
