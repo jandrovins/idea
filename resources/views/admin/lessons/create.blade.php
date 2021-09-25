@@ -15,13 +15,16 @@
                     <form method="POST" action="{{ route('admin.lesson.save') }}">
                         @csrf
                         <input type="hidden"  name="course_id" value="{{$data["course_id"]}}" />
-                        <label>@lang('messages.lesson.title')</label>
-                        <br>
-                        <input type="text"  name="title" placeholder="@lang('messages.lesson.titlePlaceholder')"/>
-                        <br>
-                        <label>@lang('messages.lesson.body')</label>
-                        <br>
-                        <textarea name="body"  cols="90" rows="5"> </textarea>
+                        <div class="form-group">
+                            <label>@lang('messages.lesson.title')</label>
+                            <input type="text" class='form-control'  name="title" placeholder="@lang('messages.lesson.titlePlaceholder')"/>
+                        </div>
+                        <div class="form-group">
+                            <label>@lang('messages.lesson.body')</label>
+                            <textarea name="body" id="body" cols="30" rows="3" class="form-control"
+                                placeholder="@lang("messages.lesson.titlePlaceholder")"
+                                value="{{ old('body') }}"></textarea>
+                        </div>
                         <button type="submit" class="btn btn-primary float-right">
                             @lang("messages.course.create.submit")
                         </button>
