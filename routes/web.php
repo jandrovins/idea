@@ -49,7 +49,6 @@ Route::middleware('auth')->group(function () {
     Route::post('/course/review/save', [ReviewController::class, 'save'])->name('review.save');
 
     //Lesson User Routes
-    Route::get('/lesson/list/{cId}', [LessonController::class, 'list'])->name('lesson.list');
     Route::get('/lesson/show/{id}', [LessonController::class, 'show'])->name('lesson.show');
     Route::get('/lesson/createPDF/{id}', [LessonController::class, 'createPDF'])->name('lesson.createPDF');
 });
