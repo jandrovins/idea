@@ -32,7 +32,7 @@ class CourseAdminController extends Controller
         Course::validate($request);
 
         $data = $request->only(['title', 'learningStyle', 'categories', 'price', 'summary']);
-        $data['author'] = Auth::user()->getId();
+        $data['author_id'] = Auth::user()->getId();
 
         Course::create($data);
 
