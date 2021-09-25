@@ -107,6 +107,10 @@ return [
     'lesson.body' => 'Lesson body',
     'lesson.titlePlaceholder' => 'Dinosaur Cloning',
 
+    // Admin Specific
+    'admin.nav' => 'Admin Navigation',
+    'admin.index.title' => 'Admin console',
+
     // General usage
     'close' => 'Close',
     'delete' => 'Delete',
@@ -114,7 +118,6 @@ return [
     'nav' => 'Navigation',
     'home' => 'Home',
     'student_opt' => 'Student Options',
-    'admin_opt' => 'Admin Options',
 
     // User
     'user.dob' => 'Date Of Birth',
