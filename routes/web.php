@@ -49,7 +49,6 @@ Route::middleware('auth')->group(function () {
     Route::post('/course/review/save', [ReviewController::class, 'save'])->name('review.save');
 
     //Lesson User Routes
-    Route::get('/lesson/list/{cId}', [LessonController::class, 'list'])->name('lesson.list');
     Route::get('/lesson/show/{id}', [LessonController::class, 'show'])->name('lesson.show');
     Route::get('/lesson/createPDF/{id}', [LessonController::class, 'createPDF'])->name('lesson.createPDF');
 });
@@ -68,8 +67,6 @@ Route::middleware(['auth', 'isAdmin'])->prefix('admin')->group(function () {
     Route::post('/courses/delete/{id}', [CourseAdminController::class, 'delete'])->name('admin.courses.delete');
 
     // Lesson
-    Route::get('/lesson/show/', [LessonAdminController::class, 'show'])->name('admin.lesson.show');
-    Route::get('/lesson/manage/{cId}', [LessonAdminController::class, 'manage'])->name('admin.lesson.manage');
     Route::get('/lesson/create/{cId}', [LessonAdminController::class, 'create'])->name('admin.lesson.create');
     Route::post('/lesson/save/', [LessonAdminController::class, 'save'])->name('admin.lesson.save');
     Route::post('/lesson/remove/{id}', [LessonAdminController::class, 'remove'])->name('admin.lesson.remove');

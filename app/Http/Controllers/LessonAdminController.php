@@ -9,31 +9,6 @@ use Illuminate\Http\Request;
 
 class LessonAdminController extends Controller
 {
-    public function show()
-    {
-        $data = []; //to be sent to the view
-        $data['title'] = 'Idea';
-        $data['lessons'] = Lesson::all();
-
-        /*
-        Course Model doesn't exist yet
-        $course = Course::findOrFail($course_id);
-        $data["course"] = $course ->getName();
-        $data["lesson"] = Lesson::where('product_id','=',$course->getId());
-        */
-
-        return view('admin.lessons.show')->with('data', $data);
-    }
-
-    public function manage($course_id)
-    {
-        $data = []; //to be sent to the view
-        $data['title'] = 'Idea';
-        $data['lessons'] = Lesson::where('course_id', '=', $course_id)->get();
-        $data['cId'] = $course_id;
-
-        return view('admin.lessons.manage')->with('data', $data);
-    }
 
     public function create($course_id)
     {
