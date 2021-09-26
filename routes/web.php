@@ -12,7 +12,6 @@ use App\Http\Controllers\userspace\HomeController;
 use App\Http\Controllers\userspace\InscriptionController;
 use App\Http\Controllers\userspace\LessonController;
 use App\Http\Controllers\userspace\ReviewController;
-
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 

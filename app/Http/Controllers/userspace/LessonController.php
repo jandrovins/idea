@@ -3,8 +3,8 @@
 //Author: Adrian Alberto Gutierrez Leal
 
 namespace App\Http\Controllers\userspace;
-use App\Http\Controllers\Controller;
 
+use App\Http\Controllers\Controller;
 use App\Models\Lesson;
 use PDF;
 
