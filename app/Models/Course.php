@@ -2,13 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
 class Course extends Model
 {
-    use HasFactory;
     /*
         attributes id, title, learningStyles, lessons, categories, author,
         created_at, price, summary
