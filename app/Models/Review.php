@@ -1,7 +1,6 @@
 <?php
 
 // Author: Vincent A. Arcila
-// Date: September 21, 2021
 
 namespace App\Models;
 
