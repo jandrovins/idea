@@ -6,7 +6,9 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('home.index');
+        $data = ['title' => __('messages.home.welcome')];
+
+        return view('home.index')->with('data', $data);
     }
 
     public function home()
