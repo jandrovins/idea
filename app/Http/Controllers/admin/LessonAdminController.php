@@ -1,5 +1,4 @@
 <?php
-
 //Author: Adrian Alberto Gutierrez Leal
 
 namespace App\Http\Controllers\admin;
@@ -12,8 +11,8 @@ class LessonAdminController extends Controller
 {
     public function create($course_id)
     {
-        $data = [];
-        $data['title'] = 'Idea';
+        $data = []; //to be sent to the view
+        $data['title'] = __('messages.lesson.create.title');;
         $data['course_id'] = $course_id;
 
         return view('admin.lessons.create')->with('data', $data);
@@ -30,7 +29,7 @@ class LessonAdminController extends Controller
     public function edit($id)
     {
         $data = []; //to be sent to the view
-        $data['title'] = 'Idea';
+        $data['title'] = __('messages.lesson.edit.title');
         $data['lesson'] = Lesson::findOrFail($id);
 
         return view('admin.lessons.edit')->with('data', $data);

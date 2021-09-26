@@ -110,6 +110,10 @@ return [
     'lesson.id' => 'Lesson ID',
     'lesson.title' => 'Lesson title',
     'lesson.body' => 'Lesson body',
+    'lesson.list.title' => 'Our Lessons',
+    'lesson.manage.title' => 'Manage Lessons',
+    'lesson.edit.title' => 'Edit Lesson',
+    'lesson.create.title' => 'Create a Lesson',
     'lesson.titlePlaceholder' => 'Dinosaur Cloning',
 
     // Admin Specific
