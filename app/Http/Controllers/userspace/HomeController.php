@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\userspace;
+
 use App\Http\Controllers\Controller;
 
 class HomeController extends Controller

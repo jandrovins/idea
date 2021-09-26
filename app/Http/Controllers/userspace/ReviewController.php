@@ -4,8 +4,8 @@
 // Date: September 22, 2021
 
 namespace App\Http\Controllers\userspace;
-use App\Http\Controllers\Controller;
 
+use App\Http\Controllers\Controller;
 use App\Models\Review;
 use Illuminate\Http\Request;
 

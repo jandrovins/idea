@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\userspace;
-use App\Http\Controllers\Controller;
 
+use App\Http\Controllers\Controller;
 use App\Models\Course;
 use App\Models\Inscription;
 use Illuminate\Http\Request;
