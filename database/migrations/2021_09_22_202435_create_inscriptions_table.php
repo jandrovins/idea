@@ -19,6 +19,7 @@ class CreateInscriptionsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->bigInteger('course_id')->unsigned();
             $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
+            $table->float('progress')->default(0);
             $table->timestamps();
         });
     }
