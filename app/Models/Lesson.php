@@ -15,9 +15,9 @@ class Lesson extends Model
     public static function validate(Request $request)
     {
         $request->validate([
-            'title' => 'required',
-            'body' => 'required',
-            'course_id' => 'required',
+            'title' => ['required', 'max:100'],
+            'body' => ['required', 'max:10000'],
+            'course_id' => ['required'],
         ]);
     }
 

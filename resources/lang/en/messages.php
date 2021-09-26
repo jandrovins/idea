@@ -1,8 +1,13 @@
 <?php
 
-// Authors: Simon Florez Silva (sflorezs1@gmail.com), Vincent Arcila (vaarcilal@eafit.edu.co)
+// Authors: Simon Florez Silva (sflorezs1@gmail.com), Vincent Arcila (vaarcilal@eafit.edu.co), Adrian Gutierrez (aagutierrl@eafit.edu.co)
 
 return [
+    //Home
+    'home.welcome' => 'Welcome!',
+    'home.store' => 'Go to store',
+    'home.owned' => 'Your Courses',
+
     // Auth user specific
     'auth.login' => 'Log In',
     'auth.register' => 'Register',
@@ -105,6 +110,10 @@ return [
     'lesson.id' => 'Lesson ID',
     'lesson.title' => 'Lesson title',
     'lesson.body' => 'Lesson body',
+    'lesson.list.title' => 'Our Lessons',
+    'lesson.manage.title' => 'Manage Lessons',
+    'lesson.edit.title' => 'Edit Lesson',
+    'lesson.create.title' => 'Create a Lesson',
     'lesson.titlePlaceholder' => 'Dinosaur Cloning',
 
     // Admin Specific

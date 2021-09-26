@@ -1,17 +1,14 @@
 <?php
 
 // Author: Vincent A. Arcila
-// Date: September 21, 2021
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
 class Review extends Model
 {
-    use HasFactory;
     //attributes id, rating, comment, created_at, updated_at, user_id, course_id
     protected $fillable = ['rating', 'comment', 'user_id', 'course_id'];
 
@@ -19,10 +16,10 @@ class Review extends Model
     {
         $request->validate(
             [
-            'rating' => 'required|numeric|gte:0|lte:10',
-            'comment' => 'required|string|min:1',
-            'user_id'=>'required',
-            'course_id'=>'required',
+            'rating' => ['required', 'numeric', 'gte:0','lte:10'],
+            'comment' => ['required', 'string', 'min:1', 'max:500'],
+            'user_id'=> ['required'],
+            'course_id'=> ['required'],
             ]
         );
     }

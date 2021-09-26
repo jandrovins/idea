@@ -4,8 +4,8 @@
 // Last edition: September 24, 2021
 
 namespace App\Http\Controllers\userspace;
-use App\Http\Controllers\Controller;
 
+use App\Http\Controllers\Controller;
 use App\Models\Course;
 use App\Models\Inscription;
 use Illuminate\Support\Facades\Auth;
@@ -77,7 +77,7 @@ class CourseController extends Controller
         $courses = Course::has('reviews')->withAvg('reviews', 'rating')->orderBy('reviews_avg_rating', 'desc')->take(3)->get();
 
         $data = [
-            'title' => __('messages.course.listTop.cardTitle'),
+            'title' => __('messages.course.listTop'),
             'courses' => $courses,
         ];
 

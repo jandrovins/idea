@@ -12,7 +12,6 @@ use App\Http\Controllers\userspace\HomeController;
 use App\Http\Controllers\userspace\InscriptionController;
 use App\Http\Controllers\userspace\LessonController;
 use App\Http\Controllers\userspace\ReviewController;
-
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -38,7 +37,7 @@ Route::redirect('/home', '/index', 301);
 Route::middleware('auth')->group(function () {
     // Course User Routes
     Route::get('/courses/list', [CourseController::class, 'list'])->name('courses.list');  // List courses the logged user is not enrolled in
-    Route::get('/courses/listTop', [CourseController::class, 'listTop'])->name('courses.listTop');
+    Route::get('/courses/listTop', [CourseController::class, 'listTop'])->name('courses.listTop'); // List of top rated courses
     Route::get('/courses/listAll', [CourseController::class, 'listAll'])->name('courses.listAll');  // List all courses
     Route::get('/courses/listOwn', [CourseController::class, 'listOwn'])->name('courses.listOwn');  // List courses the logged user is enrolled in
     Route::get('/courses/show/{id}', [CourseController::class, 'show'])->name('courses.show');

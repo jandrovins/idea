@@ -1,5 +1,5 @@
+<!--Author: Simon Florez Silva (sflorezs1@eafit.edu.co)-->
 @extends('layouts.master')
-
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

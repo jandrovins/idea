@@ -19,7 +19,7 @@ class CreateCoursesTable extends Migration
             $table->text('learningStyle');
             $table->text('categories');
             $table->bigInteger('author_id')->unsigned();
-            $table->foreign('author_id')->references('id')->on('users');
+            $table->foreign('author_id')->references('id')->on('users')->onDelete('cascade');
             $table->decimal('price', 9, 2);
             $table->text('summary');
             $table->timestamps();

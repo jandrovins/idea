@@ -19,7 +19,7 @@ class CreateLessonsTable extends Migration
             $table->text('title');
             $table->text('body');
             $table->bigInteger('course_id')->unsigned();
-            $table->foreign('course_id')->references('id')->on('courses');
+            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
             $table->timestamps();
         });
     }

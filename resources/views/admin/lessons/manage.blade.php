@@ -1,5 +1,4 @@
 <!--Author: Adrian Alberto Gutierrez Leal-->
-
 <details class="details-example">
     <summary>
         @lang("messages.course.lessons")
