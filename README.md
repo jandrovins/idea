@@ -42,7 +42,7 @@ chmod +x /usr/local/bin/composer
 
 ### Install ιδέα
 
-1. Create database and user in MariaDB. Enter MariaDB command line as root using `mysql`. Then enter:
+1. Create database and user in MariaDB. Enter MariaDB command line as root using `mysql` command. Then enter:
 ```sql
 CREATE DATABASE idea;
 GRANT ALL ON <database_name>.* TO <database_user>@localhost IDENTIFIED BY '<database_user_password>';
