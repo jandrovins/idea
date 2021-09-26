@@ -1,11 +1,7 @@
 <!--Author: Vincent Arcila (vaarcilal@eafit.edu.co)-->
-
 @extends('layouts.master')
-
 @section("title", $data["title"])
-
 @section('content')
-
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -19,7 +15,6 @@
                     @elseif (count($data["courses"]) < 3)
                         @lang("messages.course.listTop.notEnoughCoursesWithReviews", ['count_courses' => count($data["courses"])])
                     @endif
-
                     <div class="list-group">
                         @foreach ($data["courses"] as $course)
                         <a href="{{ route('courses.show', $course->getId()) }}"

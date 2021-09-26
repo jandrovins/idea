@@ -1,5 +1,4 @@
 @extends('layouts.master')
-
 @section('content')
 <!-- Portfolio Section-->
 <section class="page-section portfolio" id="portfolio">
