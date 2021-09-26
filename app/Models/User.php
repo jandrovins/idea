@@ -11,7 +11,7 @@ class User extends Authenticatable
     use HasFactory, Notifiable;
 
     /* Attributes id, name, email, dateOfBirth, phoneNumber,
-        lerningStyle, userKind, email_verified_at, password,
+        learningStyle, userKind, email_verified_at, password,
         created_at, updated_at, remember_token
     */
     /**
@@ -115,6 +115,11 @@ class User extends Authenticatable
     public function setLearningStyle($learningStyle)
     {
         $this->attributes['learningStyle'] = $learningStyle;
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
     }
 
     public function inscriptions()
