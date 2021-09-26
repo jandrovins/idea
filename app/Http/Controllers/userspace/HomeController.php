@@ -12,9 +12,4 @@ class HomeController extends Controller
 
         return view('home.index')->with('data', $data);
     }
-
-    public function home()
-    {
-        return redirect()->route('home.index');
-    }
 }
