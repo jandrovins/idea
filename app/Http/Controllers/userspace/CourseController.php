@@ -3,7 +3,8 @@
 // Authors: Simón Flórez, Vincent A. Arcila
 // Last edition: September 24, 2021
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\userspace;
+use App\Http\Controllers\Controller;
 
 use App\Models\Course;
 use App\Models\Inscription;
