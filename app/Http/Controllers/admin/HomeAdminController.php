@@ -1,5 +1,7 @@
 <?php
 
+//Authors: Simón Flórez Silva, Vincent A. Arcila
+
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;

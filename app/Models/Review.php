@@ -16,7 +16,7 @@ class Review extends Model
     {
         $request->validate(
             [
-            'rating' => ['required', 'numeric', 'gte:0','lte:10'],
+            'rating' => ['required', 'numeric', 'gte:0', 'lte:10'],
             'comment' => ['required', 'string', 'min:1', 'max:500'],
             'user_id'=> ['required'],
             'course_id'=> ['required'],
