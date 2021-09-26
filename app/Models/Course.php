@@ -83,10 +83,10 @@ class Course extends Model
          */
         $request->validate([
             'title' => ['required', 'regex:/(^[a-zA-Z0-9 ]+$)+/'],
-            'learningStyle' => ['required', 'alpha'],
-            'categories' => ['required', 'regex:/(^[a-zA-Z, -]+$)+/'],
-            'price' => ['required', 'numeric', 'gte:0'],
-            'summary' => ['required'],
+            'learningStyle' => ['required', 'alpha', 'max:100'],
+            'categories' => ['required', 'regex:/(^[a-zA-Z, -]+$)+/', 'max:100'],
+            'price' => ['required', 'numeric', 'gte:0', 'lte:999999'],
+            'summary' => ['required', 'max:1000'],
         ]);
     }
 
