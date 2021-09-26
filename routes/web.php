@@ -1,16 +1,18 @@
 <?php
 
 // Authors: Simón Flórez, Adrián Gutiérrez, Vincent A. Arcila
-// Last edition: September 21, 2021
 
-use App\Http\Controllers\CourseAdminController;
-use App\Http\Controllers\CourseController;
-use App\Http\Controllers\HomeAdminController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\InscriptionController;
-use App\Http\Controllers\LessonAdminController;
-use App\Http\Controllers\LessonController;
-use App\Http\Controllers\ReviewController;
+// Admin controllers
+use App\Http\Controllers\admin\CourseAdminController;
+use App\Http\Controllers\admin\HomeAdminController;
+use App\Http\Controllers\admin\LessonAdminController;
+// Userspace controllers
+use App\Http\Controllers\userspace\CourseController;
+use App\Http\Controllers\userspace\HomeController;
+use App\Http\Controllers\userspace\InscriptionController;
+use App\Http\Controllers\userspace\LessonController;
+use App\Http\Controllers\userspace\ReviewController;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 

@@ -1,8 +1,13 @@
 <?php
 
-// Authors: Simon Florez Silva (sflorezs1@gmail.com), Vincent Arcila (vaarcilal@eafit.edu.co)
+// Authors: Simon Florez Silva (sflorezs1@gmail.com), Vincent Arcila (vaarcilal@eafit.edu.co), Adrian Gutierrez (aagutierrl@eafit.edu.co)
 
 return [
+    //Home
+    'home.welcome' => 'Welcome!',
+    'home.store' => 'Go to store',
+    'home.owned' => 'Your Courses',
+
     // Auth user specific
     'auth.login' => 'Log In',
     'auth.register' => 'Register',
