@@ -11,7 +11,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text"> {{ $exception->getMessage() }} </p>
-                    <img class="justify-content-center" src="{{URL('/img/idea-logo.png')}}">
+                    <img class="justify-content-center" src="{{URL('/img/idea-logo.jpeg')}}">
                 </div>
 
             </div>
