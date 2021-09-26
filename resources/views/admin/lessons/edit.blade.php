@@ -15,14 +15,19 @@
                     <form method="POST" action="{{ route('admin.lesson.update',['id'=>$data['lesson']->getId()])}}">
                         @csrf
                         <input type="hidden" name="course_id" value="{{$data['lesson']->getCourseId()}}" />
-                        <label>@lang('messages.lesson.title')</label>
-                        <br>
-                        <input type="text" name="title" placeholder="{{$data['lesson']->getTitle()}}" />
-                        <br>
-                        <label>@lang('messages.lesson.body')</label>
-                        <br>
-                        <textarea name="body" placeholder="{{$data['lesson']->getBody()}}" cols="90" rows="5"> </textarea>
-                        <input type="submit" value="@lang('messages.course.edit.submit')" />
+                        <div class="form-group">
+                            <label>@lang('messages.lesson.title')</label>
+                            <input type="text" class='form-control'  name="title" placeholder="{{$data['lesson']->getTitle()}}"/>
+                        </div>
+                        <div class="form-group">
+                            <label>@lang('messages.lesson.body')</label>
+                            <textarea name="body" id="body" cols="30" rows="3" class="form-control"
+                                placeholder="{{$data['lesson']->getBody()}}"
+                                value="{{ old('body') }}"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary float-right">
+                            @lang("messages.course.edit.submit")
+                        </button>
                     </form>
                 </div>
             </div>

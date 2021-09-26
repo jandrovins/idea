@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
+use App\Http\Controllers\Controller;
 
 use App\Models\Course;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class CourseAdminController extends Controller
 {
     public function list()
     {
         $data = [
-            'title' => 'Manage courses',
+            'title' => __('messages.course.list.admin.cardTitle'),
             'courses' => Course::with('lessons')->paginate(10),
         ];
 
@@ -20,9 +20,7 @@ class CourseAdminController extends Controller
 
     public function create()
     {
-        $data = [
-            'title' => 'Create Course',
-        ];
+        $data = ['title' => __('messages.course.create.cardTitle')];
 
         return view('admin.courses.create')->with('data', $data);
     }
@@ -31,10 +29,7 @@ class CourseAdminController extends Controller
     {
         Course::validate($request);
 
-        $data = $request->only(['title', 'learningStyle', 'categories', 'price', 'summary']);
-        $data['author'] = Auth::user()->getId();
-
-        Course::create($data);
+        Course::create($request->only(['title', 'learningStyle', 'categories', 'author_id', 'price', 'summary']));
 
         return back()->with('success', __('messages.course.create.success'));
     }
@@ -52,7 +47,7 @@ class CourseAdminController extends Controller
         $course = Course::with('lessons')->findOrFail($id);
 
         $data = [
-            'title' => 'Edit '.$course->getTitle(),
+            'title' => __('messages.course.edit.cardTitle').': '.$course->getTitle(),
             'course' => $course,
         ];
 

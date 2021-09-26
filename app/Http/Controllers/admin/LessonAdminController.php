@@ -1,15 +1,14 @@
 <?php
-
 //Author: Adrian Alberto Gutierrez Leal
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
+use App\Http\Controllers\Controller;
 
 use App\Models\Lesson;
 use Illuminate\Http\Request;
 
 class LessonAdminController extends Controller
 {
-    
     public function create($course_id)
     {
         $data = []; //to be sent to the view

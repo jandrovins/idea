@@ -3,7 +3,8 @@
 // Authors: Simón Flórez, Vincent A. Arcila
 // Last edition: September 24, 2021
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\userspace;
+use App\Http\Controllers\Controller;
 
 use App\Models\Course;
 use App\Models\Inscription;
@@ -20,7 +21,7 @@ class CourseController extends Controller
         $courses = Course::with('lessons')->whereNotIn('id', $userCourses)->paginate(10);
 
         $data = [
-            'title' => 'Courses',
+            'title' => __('messages.course.list.available'),
             'courses' => $courses,
         ];
 
@@ -30,7 +31,7 @@ class CourseController extends Controller
     public function listAll()
     {
         $data = [
-            'title' => 'List of all courses',
+            'title' => __('messages.course.list.all'),
             'courses' => Course::with('lessons')->paginate(10),
         ];
 
@@ -46,7 +47,7 @@ class CourseController extends Controller
         $courses = Course::with('lessons')->whereIn('id', $userCourses)->paginate(10);
 
         $data = [
-            'title' => 'My courses',
+            'title' => __('messages.course.list.own'),
             'courses' => $courses,
         ];
 

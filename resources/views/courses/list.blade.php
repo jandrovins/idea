@@ -11,7 +11,7 @@
         <div class="col-md-8">
             @include('util.message')
             <div class="card">
-                <div class="card-header">@lang("messages.course.list.cardTitle")</div>
+                <div class="card-header">{{ $data['title'] }}</div>
                 <div class="card-body">
                     <div class="list-group">
                         @if (count($data["courses"]) === 0)
@@ -24,6 +24,9 @@
                         </a>
                         @endforeach
                     </div>
+                </div>
+                <div class="card-footer">
+                    <div class="d-flex flex-row justify-content-center">{{ $data["courses"]->links() }}</div>
                 </div>
             </div>
         </div>

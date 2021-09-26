@@ -24,6 +24,7 @@
                     @endif
                     <form method="POST" action="{{ route('admin.courses.save') }}">
                         @csrf
+                        <input type="hidden" name="author_id" value="{{ Auth::user()->getId() }}">
                         <div class="form-group">
                             <label for="title">@lang("messages.course.title")</label>
                             <input type="text" class="form-control" name="title" 

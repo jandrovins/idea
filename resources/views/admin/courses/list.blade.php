@@ -87,6 +87,9 @@
                         </tbody>
                     </table>
                 </div>
+                <div class="card-footer">
+                    <div class="d-flex flex-row justify-content-center">{{ $data["courses"]->links() }}</div>
+                </div>
             </div>
         </div>
     </div>
