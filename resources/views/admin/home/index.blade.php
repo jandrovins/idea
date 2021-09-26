@@ -1,4 +1,4 @@
-<!--Author: Simon Florez Silva (sflorezs1@eafit.edu.co)-->
+<!--Author: Vincent Arcila (vaarcilal@eafit.edu.co)-->
 @extends ('layouts.master')
 @section ("title", $data["title"])
 @section ('content')
