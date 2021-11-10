@@ -18,12 +18,12 @@
                         </ul>
                     </div>
                     @endif
-                    <form method="POST" action="{{ route('admin.courses.save') }}">
+                    <form method="POST" action="{{ route('admin.courses.save') }}" enctype="multipart/form-data">
                         @csrf
                         <input type="hidden" name="author_id" value="{{ Auth::user()->getId() }}">
                         <div class="form-group">
                             <label for="title">@lang("messages.course.title")</label>
-                            <input type="text" class="form-control" name="title" 
+                            <input type="text" class="form-control" name="title"
                             placeholder="@lang("messages.course.titlePlaceholder")" value="{{ old('title') }}">
                         </div>
                         <div class="form-group">
@@ -36,7 +36,7 @@
                         </div>
                         <div class="form-group">
                             <label for="categories">@lang("messages.course.create.categories")</label>
-                            <input type="text" class="form-control" name="categories" 
+                            <input type="text" class="form-control" name="categories"
                             placeholder="@lang("messages.course.create.categoriesPlaceholder")" value="{{ old('categories') }}">
                         </div>
                         <div class="form-group">
@@ -56,6 +56,12 @@
                                 placeholder="@lang("messages.course.summaryPlaceholder")"
                                 value="{{ old('summary') }}"></textarea>
                         </div>
+                        <div class="custom-file">
+                            <label class="custom-file-label" for="image">@lang("messages.course.image")</label>
+                            <input class="custom-file-input" type="file" name="image" id="image"/>
+                        </div>
+                        <br>
+                        <br>
                         <button type="submit" class="btn btn-primary float-right">
                             @lang("messages.course.create.submit")
                         </button>
