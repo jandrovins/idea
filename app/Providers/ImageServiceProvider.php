@@ -4,11 +4,12 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
 use App\Interfaces\ImageStorage;
 use App\Util\LocalImageStorage;
+use Illuminate\Support\ServiceProvider;
 
-class ImageServiceProvider extends ServiceProvider {
+class ImageServiceProvider extends ServiceProvider
+{
     /**
      * Register any application serivices.
      *

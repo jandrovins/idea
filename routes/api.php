@@ -20,3 +20,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/courses', [CoursesApi::class, 'listCourses'])->name('api.courses.list');
+Route::get('/courses/paginate', [CoursesApi::class, 'listCoursesPaginate'])->name('api.courses.list.paginate');
