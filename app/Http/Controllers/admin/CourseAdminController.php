@@ -5,8 +5,10 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Interfaces\ImageStorage;
 use App\Models\Course;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CourseAdminController extends Controller
 {
@@ -31,7 +33,20 @@ class CourseAdminController extends Controller
     {
         Course::validate($request);
 
-        Course::create($request->only(['title', 'learningStyle', 'categories', 'author_id', 'price', 'summary']));
+        $imageStorage = app(ImageStorage::class);
+        // Store image and get internal name
+        $imageName = $imageStorage->store($request);
+
+        if ($imageName == asset('img/missing.jpeg')) {
+            return back()->with('error', __('messages.admin.image.create.error'));
+        }
+
+        $data = $request->only(['title', 'learningStyle', 'categories', 'author_id', 'price', 'summary']);
+
+        // Replace with internal name for image
+        $data['image'] = $imageName;
+
+        Course::create($data);
 
         return back()->with('success', __('messages.course.create.success'));
     }

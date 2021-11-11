@@ -86,6 +86,7 @@ return [
     'course.price' => 'Price',
     'course.priceUnit' => '&#36;USD',
     'course.summary' => 'Summary',
+    'course.image' => 'Course Image',
     'course.welcome' => 'My Courses',
     'course.store' => 'Store',
     'course.enroll' => 'Enroll',
@@ -115,6 +116,9 @@ return [
     'lesson.edit.title' => 'Edit Lesson',
     'lesson.create.title' => 'Create a Lesson',
     'lesson.titlePlaceholder' => 'Dinosaur Cloning',
+
+    // Image general
+    'admin.image.create.error' => 'Error while trying to store image, please try again.',
 
     // Admin Specific
     'admin.nav' => 'Admin Navigation',

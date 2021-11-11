@@ -56,23 +56,33 @@
                     @endif
                 </div>
                 <div class="card-body">
-                    <h5><span class="font-weight-bold">@lang("messages.course.id"):</span>
-                        {{ $data["course"]->getId() }}</h5>
-                    <h6><span class="font-weight-bold">@lang("messages.course.title"):</span>
-                        {{ $data["course"]->getTitle() }}
-                    </h6>
-                    <h6><span class="font-weight-bold">@lang("messages.course.author"):</span>
-                        {{ $data["course"]->author->getName() }}
-                    </h6>
+                    <div class="row flex-nowrap">
+                        <div class="column px-2 pb-2">
+                            <img class="rounded img-thumbnail img-responsive sm"
+                                 src="{{ asset($data['course']->getImage()) }}" alt="@lang("messages.course.image")">
+                        </div>
+                        <div class="column">
+                            <h5 class="text-wrap"><span class="font-weight-bold">@lang("messages.course.id"):</span>
+                                {{ $data["course"]->getId() }}</h5>
+                            <h6 class="text-wrap"><span class="font-weight-bold">@lang("messages.course.title"):</span>
+                                {{ $data["course"]->getTitle() }}
+                            </h6>
+                            <h6 class="text-wrap"><span class="font-weight-bold">@lang("messages.course.author"):</span>
+                                {{ $data["course"]->author->getName() }}
+                            </h6>
+                            <h6 class="text-wrap"><span class="font-weight-bold">@lang("messages.course.learningStyle"):</span>
+                                {{ $data["course"]->getLearningStyle() }}</h6>
+                            <h6 class="text-wrap"><span class="font-weight-bold">@lang("messages.course.categories"):</span>
+                                {{ $data["course"]->getCategories() }}</h6>
+                            <h6 class="text-wrap"><span class="font-weight-bold">@lang("messages.course.price"):</span>
+                                {{ $data["course"]->getPrice() }}
+                            </h6>
+                        </div>
+                    </div>
+
                     <h6><span class="font-weight-bold">@lang("messages.course.summary"):</span></h6>
                     <p class="card-text">{{ $data["course"]->getSummary() }}</p>
-                    <h6><span class="font-weight-bold">@lang("messages.course.learningStyle"):</span>
-                        {{ $data["course"]->getLearningStyle() }}</h6>
-                    <h6><span class="font-weight-bold">@lang("messages.course.categories"):</span>
-                        {{ $data["course"]->getCategories() }}</h6>
-                    <h6><span class="font-weight-bold">@lang("messages.course.price"):</span>
-                        {{ $data["course"]->getPrice() }}
-                    </h6>
+
                     @if (!$data["course"]->lessons->isEmpty())
                     @include('lesson.list')
                     @else
@@ -106,6 +116,5 @@
             @include ('courses.createReview')
         @endif
     </div>
-</div>
 </div>
 @endsection

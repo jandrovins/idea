@@ -11,9 +11,9 @@ class Course extends Model
 {
     /*
         attributes id, title, learningStyles, lessons, categories, author,
-        created_at, price, summary
+        created_at, price, summary, image
     */
-    protected $fillable = ['title', 'learningStyle', 'categories', 'author_id', 'price', 'summary'];
+    protected $fillable = ['title', 'learningStyle', 'categories', 'author_id', 'price', 'summary', 'image'];
 
     public function getId()
     {
@@ -75,6 +75,16 @@ class Course extends Model
         $this->attributes['summary'] = $summary;
     }
 
+    public function getImage()
+    {
+        return $this->attributes['image'];
+    }
+
+    public function setImage($image)
+    {
+        $this->attributes['image'] = $image;
+    }
+
     public static function validate(Request $request)
     {
         /*
@@ -87,6 +97,7 @@ class Course extends Model
             'categories' => ['required', 'regex:/(^[a-zA-Z, -]+$)+/', 'max:100'],
             'price' => ['required', 'numeric', 'gte:0', 'lte:999999'],
             'summary' => ['required', 'max:1000'],
+            'image' => ['required', 'file', 'image'],
         ]);
     }
 
