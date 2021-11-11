@@ -57,7 +57,7 @@ class CourseController extends Controller
     public function show($id)
     {
         $userId = Auth::user()->getId();
-        $course = Course::with(['lessons', 'author'])->findOrFail($id);
+        $course = Course::with(['lessons', 'author', 'reviews.user'])->findOrFail($id);
         $courseId = $course->getId();
 
         $data = [
