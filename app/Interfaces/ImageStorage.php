@@ -3,9 +3,11 @@
 //Author: Simón Flórez Silva
 
 namespace App\Interfaces;
+
 use Illuminate\Http\Request;
 
-interface ImageStorage {
+interface ImageStorage
+{
     /**
      * @param Request $request
      * @return string with the internal name of the image in disk

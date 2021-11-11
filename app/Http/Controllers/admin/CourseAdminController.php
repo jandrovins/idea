@@ -8,7 +8,6 @@ use App\Http\Controllers\Controller;
 use App\Interfaces\ImageStorage;
 use App\Models\Course;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class CourseAdminController extends Controller
 {

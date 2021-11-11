@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\CoursesApi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/courses', [CoursesApi::class, 'listCourses'])->name('api.courses.list');
+Route::get('/courses/paginate', [CoursesApi::class, 'listCoursesPaginate'])->name('api.courses.list.paginate');
