@@ -17,10 +17,11 @@ jobs:
     - name: DockerHub Login
       run: docker login -u ${{secrets.DOCKERHUB_USER}} -p ${{secrets.DOCKERHUB_PASS}}
     - name: Build the Docker image
-      run: docker build --file Dockerfile --tag sflorezs1/great-idea:latest \
+      run: docker build \
         --build-arg DB_DB=${{secrets.DB_DB}} \
         --build-arg DB_USER=${{secrets.DB_USER}} \
         --build-arg DB_HOST=${{secrets.DB_HOST}} \
-        --build-arg DB_PASS=${{secrets.DB_PASS}} .
+        --build-arg DB_PASS=${{secrets.DB_PASS}} \
+        --file Dockerfile --tag sflorezs1/great-idea:latest .
     - name: DockerHub Push
       run: docker push sflorezs1/great-idea
