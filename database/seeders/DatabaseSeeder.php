@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
         ];
 
         if (strlen($db['password']) > 0) {
-            exec("mysql -u ${db['username']} -p ${db['password']} -h ${db['host']} ${db['database']} < ${sqlFile}");
+            exec("mysql -u ${db['username']} -p${db['password']} -h ${db['host']} ${db['database']} < ${sqlFile}");
         } else {
             exec("mysql -u ${db['username']} -h ${db['host']} ${db['database']} < ${sqlFile}");
         }
