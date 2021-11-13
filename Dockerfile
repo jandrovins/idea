@@ -37,6 +37,8 @@ RUN sed -i "/DB_DATABASE=/c\DB_DATABASE='$DB_DB'" .env
 RUN sed -i "/DB_USERNAME=/c\DB_USERNAME='$DB_USER'" .env
 RUN sed -i "/DB_PASSWORD=/c\DB_PASSWORD='$DB_PASS'" .env
 
+RUN cat .env
+
 RUN php artisan key:generate
 RUN php artisan storage:link
 RUN php artisan migrate:fresh
