@@ -18,7 +18,7 @@ class LocalImageStorage implements ImageStorage
             $file = $request->file('image');
             // Files uploaded by a specific user are uploaded to a directory inside storage
             $dir = 'img/'.$user->getName().$user->getId().'/';
-            $name = Auth::user()->getId().'_'.date('Y-m-d H:i:s').'_'.uniqid().'.'.$file->extension();
+            $name = Auth::user()->getId().'_'.date('Y-m-d-H:i:s').'_'.uniqid().'.'.$file->extension();
             // check if user directory already exists
             if (! Storage::exists($dir)) {
                 // create user directory
