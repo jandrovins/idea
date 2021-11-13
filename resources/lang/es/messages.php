@@ -93,49 +93,49 @@ return [
     'course.summaryPlaceholder' => 'Si se puede imaginar, se puede programar.',
 
     // Lesson Create Specific
-    'lesson.create.cardTitle' => 'Create lesson',
-    'lesson.create.success' => 'Lesson created successfully!',
+    'lesson.create.cardTitle' => 'Crear lección',
+    'lesson.create.success' => 'Lección creada exitosamente!',
 
     // Course Delete Specific
-    'lesson.delete.success' => 'Lesson deleted successfully!',
+    'lesson.delete.success' => 'Lección eliminada exitosamente!',
 
     // Lesson List Specific
     'lesson.list.cardTitle' => 'Nuestras Lecciones',
     'lesson.show' => 'More',
 
     // Lesson Edit Specific
-    'lesson.edit.cardTitle' => 'Edit lesson',
+    'lesson.edit.cardTitle' => 'Edit lección',
     'lesson.edit.success' => 'Lesson updated successfully!',
 
     // Lesson General
-    'lesson.id' => 'Lesson ID',
-    'lesson.title' => 'Lesson title',
-    'lesson.body' => 'Lesson body',
-    'lesson.list.title' => 'Our Lessons',
-    'lesson.manage.title' => 'Manage Lessons',
-    'lesson.edit.title' => 'Edit Lesson',
-    'lesson.create.title' => 'Create a Lesson',
-    'lesson.titlePlaceholder' => 'Dinosaur Cloning',
+    'lesson.id' => 'ID de Lección',
+    'lesson.title' => 'Título de Lección',
+    'lesson.body' => 'Cuerpo de Lección',
+    'lesson.list.title' => 'Nuestras Lecciones',
+    'lesson.manage.title' => 'Administrar Lecciones',
+    'lesson.edit.title' => 'Editar Lección',
+    'lesson.create.title' => 'Crear una Lección',
+    'lesson.titlePlaceholder' => 'Clonación de Dinosaurios',
 
     // Image general
-    'admin.image.create.error' => 'Error while trying to store image, please try again.',
+    'admin.image.create.error' => 'Error tratando de guardar la imagen, por favor intente de nuevo.',
 
     // Admin Specific
-    'admin.nav' => 'Admin Navigation',
-    'admin.index.title' => 'Admin console',
+    'admin.nav' => 'Administración de admin',
+    'admin.index.title' => 'Consola de admin',
 
     // General usage
-    'close' => 'Close',
-    'delete' => 'Delete',
-    'actions' => 'Actions',
-    'nav' => 'Navigation',
-    'home' => 'Home',
-    'student_opt' => 'Student Options',
-    'hello' => 'Hello',
-    'guest' => 'guest',
+    'close' => 'Cerrar',
+    'delete' => 'Eliminar',
+    'actions' => 'Acciones',
+    'nav' => 'Navegación',
+    'home' => 'Inicio',
+    'student_opt' => 'Opciones de Estudiante',
+    'hello' => 'Hola',
+    'guest' => 'invitado',
 
     // User
-    'user.dob' => 'Date Of Birth',
-    'user.phoneNum' => 'Phone Number',
+    'user.dob' => 'Fecha de Nacimiento',
+    'user.phoneNum' => 'Número Celular',
 
 ];
