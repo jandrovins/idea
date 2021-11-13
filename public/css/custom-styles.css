@@ -6,3 +6,12 @@ img.sm {
     width: 200px;
     height: auto;
 }
+
+.clear {
+    all: initial;
+ }
+
+ a.inactiveLink {
+    pointer-events: none;
+    cursor: default;
+ }

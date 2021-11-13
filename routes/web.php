@@ -74,3 +74,5 @@ Route::middleware(['auth', 'isAdmin'])->prefix('admin')->group(function () {
     Route::get('/lesson/edit/{id}', [LessonAdminController::class, 'edit'])->name('admin.lesson.edit');
     Route::post('/lesson/update/{id}', [LessonAdminController::class, 'update'])->name('admin.lesson.update');
 });
+
+Route::get('locale/{locale}', [App\Http\Controllers\LocalizationController::class, 'switchLang'])->name('locale.switch');
