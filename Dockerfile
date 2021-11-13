@@ -32,10 +32,10 @@ RUN composer install \
     --prefer-dist
 
 RUN cp .env-example .env
-RUN sed -i '/DB_HOST=/c\DB_HOST="$DB_HOST"' .env
-RUN sed -i '/DB_DATABASE=/c\DB_DATABASE="$DB_DB"' .env
-RUN sed -i '/DB_USERNAME=/c\DB_USERNAME="$DB_USER"' .env
-RUN sed -i '/DB_PASSWORD=/c\DB_PASSWORD="$DB_PASS"' .env
+RUN sed -i "/DB_HOST=/c\DB_HOST=\"$DB_HOST\"" .env
+RUN sed -i "/DB_DATABASE=/c\DB_DATABASE=\"$DB_DB\"" .env
+RUN sed -i "/DB_USERNAME=/c\DB_USERNAME=\"$DB_USER\"" .env
+RUN sed -i "/DB_PASSWORD=/c\DB_PASSWORD=\"$DB_PASS\"" .env
 
 RUN cat .env
 
