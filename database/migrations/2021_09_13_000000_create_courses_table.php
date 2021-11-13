@@ -24,7 +24,7 @@ class CreateCoursesTable extends Migration
             $table->foreign('author_id')->references('id')->on('users')->onDelete('cascade');
             $table->decimal('price', 9, 2);
             $table->text('summary');
-            $table->string('image')->default('storage/img/missing.jpeg');
+            $table->string('image')->default('/img/missing.jpeg');
             $table->timestamps();
         });
     }
