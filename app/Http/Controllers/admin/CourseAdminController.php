@@ -80,7 +80,7 @@ class CourseAdminController extends Controller
         // Store image and get internal name
         $imageName = $imageStorage->store($request);
 
-        if ($imageName == asset('img/missing.jpeg')) {
+        if ($imageName == 'img/missing.jpeg') {
             return back()->with('error', __('messages.admin.image.create.error'));
         }
 
