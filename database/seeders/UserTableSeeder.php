@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Util\RandomImage;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -16,6 +17,8 @@ class UserTableSeeder extends Seeder
     public function run()
     {
         if (config('admin.admin_name')) {
+            $randomImage = new RandomImage();
+            $imageName = $randomImage->getAvatar('admin');
             User::firstOrCreate(
                 ['email' => config('admin.admin_email')], [
                     'name' => config('admin.admin_name'),
@@ -24,6 +27,7 @@ class UserTableSeeder extends Seeder
                     'dateOfBirth' => config('admin.admin_dob'),
                     'learningStyle' => config('admin.admin_learning_style'),
                     'userKind' => 'admin',
+                    'image' => $imageName,
                 ]
             );
         }

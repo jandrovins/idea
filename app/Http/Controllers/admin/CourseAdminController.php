@@ -7,6 +7,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Interfaces\ImageStorage;
 use App\Models\Course;
+use App\Util\RandomImage;
 use Illuminate\Http\Request;
 
 class CourseAdminController extends Controller
@@ -32,9 +33,15 @@ class CourseAdminController extends Controller
     {
         Course::validate($request);
 
-        $imageStorage = app(ImageStorage::class);
-        // Store image and get internal name
-        $imageName = $imageStorage->store($request);
+        if ($request->hasFile('image')) {
+            $imageStorage = app(ImageStorage::class);
+            // Store image and get internal name
+            $imageName = $imageStorage->store($request);
+        }else{
+            $randomImage = new RandomImage();
+            $imageName = $randomImage->getAvatar($request['title']);
+        }
+
 
         if ($imageName == asset('img/missing.jpeg')) {
             return back()->with('error', __('messages.admin.image.create.error'));
