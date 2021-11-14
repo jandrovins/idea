@@ -50,7 +50,6 @@ img.xsm {
 
 .wrap-break {
     overflow-wrap: break-word;
-    display: inline-block;
 }
 
 .clear {
@@ -66,5 +65,10 @@ a.inactiveLink {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+table {
+    table-layout: fixed;
+    word-wrap: break-word;
 }
 

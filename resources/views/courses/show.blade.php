@@ -63,17 +63,17 @@
                         </div>
                         <div class="column w-70">
                             <h5 class="text-wrap wrap-break"><span class="font-weight-bold">@lang("messages.course.id"):</span>
-                                {{ $data["course"]->getId() }}</h5><br>
+                                {{ $data["course"]->getId() }}</h5>
                             <h6 class="text-wrap wrap-break"><span class="font-weight-bold">@lang("messages.course.title"):</span>
                                 {{ $data["course"]->getTitle() }}
-                            </h6><br>
+                            </h6>
                             <h6 class="text-wrap wrap-break"><span class="font-weight-bold">@lang("messages.course.author"):</span>
                                 {{ $data["course"]->author->getName() }}
-                            </h6><br>
+                            </h6>
                             <h6 class="text-wrap wrap-break"><span class="font-weight-bold">@lang("messages.course.learningStyle"):</span>
-                                {{ $data["course"]->getLearningStyle() }}</h6><br>
+                                {{ $data["course"]->getLearningStyle() }}</h6>
                             <h6 class="text-wrap wrap-break"><span class="font-weight-bold">@lang("messages.course.categories"):</span>
-                                {{ $data["course"]->getCategories() }}</h6><br>
+                                {{ $data["course"]->getCategories() }}</h6>
                             <h6 class="text-wrap wrap-break"><span class="font-weight-bold">@lang("messages.course.price"):</span>
                                 {{ $data["course"]->getPrice() }}
                             </h6>
@@ -90,6 +90,7 @@
                     @endif
                 </div>
             </div>
+            <br>
             <div class="card">
                 <div class="card-header">@lang("messages.course.reviews")</div>
                 <div class="card-body">
@@ -104,7 +105,7 @@
                                 </div>
                                 <div class="column w-80">
                                     <h6 class="text-wrap wrap-break"><span class="font-weight-bold">@lang("messages.course.review.user"):</span>
-                                        {{ $review->user->getName() }}</h6><br>
+                                        {{ $review->user->getName() }}</h6>
                                     <h6 class="text-wrap wrap-break"><span class="font-weight-bold">@lang("messages.course.review.rating"):</span>
                                         @for($i = 0; $i < $review->getRating() / 2; $i++)
                                             @if($i + 0.5 == $review->getRating() / 2)
@@ -119,7 +120,7 @@
                                         {{ $review->getRating() }}
                                     </h6><br>
                                     <h6 class="text-wrap wrap-break w-100"><span class="font-weight-bold">@lang("messages.course.review.comment"):</span>
-                                        {{ $review->getComment() }}</h6><br>
+                                        {{ $review->getComment() }}</h6>
                                 </div>
                             </div>
                         </li>
@@ -131,9 +132,11 @@
                 </div>
             </div>
         </div>
+        <div class="column">
         @if ( $data['isEnrolled'] )
             @include ('courses.createReview')
         @endif
+        </div>
     </div>
 </div>
 @endsection
