@@ -23,13 +23,13 @@
                         <input type="hidden" name="course_id" value="{{$data['lesson']->getCourseId()}}" />
                         <div class="form-group">
                             <label>@lang('messages.lesson.title')</label>
-                            <input type="text" class='form-control'  name="title" placeholder="{{$data['lesson']->getTitle()}}"/>
+                            <input type="text" class='form-control'  name="title" placeholder="{{$data['lesson']->getTitle()}}"
+                                value="{{ old('title', $data['lesson']->getTitle()) }}"/>
                         </div>
                         <div class="form-group">
                             <label>@lang('messages.lesson.body')</label>
                             <textarea name="body" id="body" cols="30" rows="3" class="form-control"
-                                placeholder="{{$data['lesson']->getBody()}}"
-                                value="{{ old('body') }}"></textarea>
+                                placeholder="{{$data['lesson']->getBody()}}">{{ old('body', $data['lesson']->getBody()) }}</textarea>
                         </div>
                         <button type="submit" class="btn btn-primary float-right">
                             @lang("messages.course.edit.submit")
