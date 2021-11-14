@@ -24,13 +24,13 @@
                         @csrf
                         <div class="form-group">
                             <label for="title">@lang("messages.course.title")</label>
-                            <input type="text" class="form-control" name="title" placeholder="@lang("
-                                messages.course.titlePlaceholder")" value="{{ $data["course"]->getTitle() }}">
+                            <input type="text" class="form-control" name="title" placeholder="@lang('messages.course.titlePlaceholder')"
+                                value="{{ old('title', $data["course"]->getTitle()) }}">
                         </div>
                         <div class="form-group">
                             <label for="learningStyle">@lang("messages.course.learningStyle")</label>
                             <select class="custom-select" name="learningStyle"
-                                value="{{ $data["course"]->getLearningStyle() }}">
+                                value="{{ old('learningStyle', $data["course"]->getLearningStyle()) }}">
                                 <option value="auditory">@lang("messages.course.auditory")</option>
                                 <option value="kinesthesic">@lang("messages.course.kinesthesic")</option>
                                 <option value="visual">@lang("messages.course.visual")</option>
@@ -38,15 +38,15 @@
                         </div>
                         <div class="form-group">
                             <label for="categories">@lang("messages.course.create.categories")</label>
-                            <input type="text" class="form-control" name="categories" placeholder="@lang("
-                                messages.course.create.categoriesPlaceholder")"
-                                value="{{ $data["course"]->getCategories() }}">
+                            <input type="text" class="form-control" name="categories" placeholder="@lang(
+                                "messages.course.create.categoriesPlaceholder")"
+                                value="{{ old('categories', $data["course"]->getCategories()) }}">
                         </div>
                         <div class="form-group">
                             <label for="price">@lang("messages.course.price")</label>
                             <div class="input-group">
                                 <input type="number" step="0.01" class="form-control" name="price" placeholder="10"
-                                    value="{{ $data["course"]->getPrice() }}" aria-describedby="price-addon">
+                                    value="{{ old('price', $data["course"]->getPrice()) }}" aria-describedby="price-addon">
                                 <div class="input-group-append">
                                     <span class="input-group-text"
                                         id="price-addon">@lang("messages.course.priceUnit")</span>
@@ -56,8 +56,8 @@
                         <div class="form-group">
                             <label for="summary">@lang("messages.course.summary")</label>
                             <textarea name="summary" id="summary" cols="30" rows="3" class="form-control"
-                                placeholder="@lang("
-                                messages.course.summaryPlaceholder")">{{ $data["course"]->getSummary() }}</textarea>
+                                placeholder="@lang(
+                                "messages.course.summaryPlaceholder")">{{ old('summary', $data["course"]->getSummary()) }}</textarea>
                         </div>
                         <button type="submit"
                             class="btn btn-primary float-right">@lang("messages.course.edit.submit")</button>
