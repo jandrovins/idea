@@ -109,6 +109,16 @@ class User extends Authenticatable
         $this->attributes['userKind'] = $userKind;
     }
 
+    public function getImage()
+    {
+        return $this->attributes['image'];
+    }
+
+    public function setImage($image)
+    {
+        return $this->attributes['image'] = $image;
+    }
+
     public function getLearningStyle()
     {
         return $this->attributes['learningStyle'];
