@@ -107,7 +107,18 @@
                                     <h6 class="text-wrap wrap-break"><span class="font-weight-bold">@lang("messages.course.review.user"):</span>
                                         {{ $review->user->getName() }}</h6>
                                     <h6 class="text-wrap wrap-break"><span class="font-weight-bold">@lang("messages.course.review.rating"):</span>
-                                        {{ $review->getRating() }}</h6>
+                                        @for($i = 0; $i < $review->getRating() / 2; $i++)
+                                            @if($i + 0.5 == $review->getRating() / 2)
+                                                <i class="fa fa-star-half-o"></i>
+                                            @else
+                                                <i class="fa fa-star"></i>
+                                            @endif
+                                        @endfor
+                                        @for($i = ceil($review->getRating() / 2); $i < 5; $i++)
+                                            <i class="fa fa-star-o"></i>
+                                        @endfor
+                                        {{ $review->getRating() }}
+                                    </h6><br>
                                     <h6 class="text-wrap wrap-break w-100"><span class="font-weight-bold">@lang("messages.course.review.comment"):</span>
                                         {{ $review->getComment() }}</h6>
                                 </div>
