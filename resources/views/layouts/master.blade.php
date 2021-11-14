@@ -92,6 +92,10 @@
             <li><a href="{{ route('login') }}">@lang('messages.auth.login')</a></li>
             <li><a href="{{ route('register') }}">@lang('messages.auth.register')</a></li>
             @else
+            <div class="flex row justify-content-center">
+                <img class="rounded img-thumbnail img-responsive xsm m-2"
+                     src="{{ asset(Auth::User()->getImage()) }}" alt="@lang("messages.course.image")">
+            </div>
             <li class="header">@lang('messages.hello') {{ Auth::user()->getName() }}</li>
             <li><a href="" onclick="event.preventDefault();logout.submit();">@lang('messages.auth.logout')</a></li>
             <form id="logout" action="{{ route('logout') }}" method="POST" class="d-none">

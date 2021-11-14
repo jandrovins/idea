@@ -8,7 +8,7 @@
             @include ('util.message')
             <div class="card">
                 <div class="card-header d-flex justify-content-between align-content-center">
-                    {{ $data["course"]->getId() }} - {{ $data["course"]->getTitle() }}
+                    <span class="ellipsis w-75">{{ $data["course"]->getId() }} - {{ $data["course"]->getTitle() }}</span>
                     @if ( $data['isEnrolled'] )
                     <!-- Button for leave -->
                     <button type="button" class="btn btn-sm btn-danger" data-target="#leave" data-toggle="modal">
@@ -57,24 +57,24 @@
                 </div>
                 <div class="card-body">
                     <div class="row flex-nowrap">
-                        <div class="column px-2 pb-2">
-                            <img class="rounded img-thumbnail img-responsive sm"
+                        <div class="column px-2 pb-2 w-30">
+                            <img class="rounded img-thumbnail sm"
                                  src="{{ asset($data['course']->getImage()) }}" alt="@lang("messages.course.image")">
                         </div>
-                        <div class="column">
-                            <h5 class="text-wrap"><span class="font-weight-bold">@lang("messages.course.id"):</span>
+                        <div class="column w-70">
+                            <h5 class="text-wrap wrap-break"><span class="font-weight-bold">@lang("messages.course.id"):</span>
                                 {{ $data["course"]->getId() }}</h5>
-                            <h6 class="text-wrap"><span class="font-weight-bold">@lang("messages.course.title"):</span>
+                            <h6 class="text-wrap wrap-break"><span class="font-weight-bold">@lang("messages.course.title"):</span>
                                 {{ $data["course"]->getTitle() }}
                             </h6>
-                            <h6 class="text-wrap"><span class="font-weight-bold">@lang("messages.course.author"):</span>
+                            <h6 class="text-wrap wrap-break"><span class="font-weight-bold">@lang("messages.course.author"):</span>
                                 {{ $data["course"]->author->getName() }}
                             </h6>
-                            <h6 class="text-wrap"><span class="font-weight-bold">@lang("messages.course.learningStyle"):</span>
+                            <h6 class="text-wrap wrap-break"><span class="font-weight-bold">@lang("messages.course.learningStyle"):</span>
                                 {{ $data["course"]->getLearningStyle() }}</h6>
-                            <h6 class="text-wrap"><span class="font-weight-bold">@lang("messages.course.categories"):</span>
+                            <h6 class="text-wrap wrap-break"><span class="font-weight-bold">@lang("messages.course.categories"):</span>
                                 {{ $data["course"]->getCategories() }}</h6>
-                            <h6 class="text-wrap"><span class="font-weight-bold">@lang("messages.course.price"):</span>
+                            <h6 class="text-wrap wrap-break"><span class="font-weight-bold">@lang("messages.course.price"):</span>
                                 {{ $data["course"]->getPrice() }}
                             </h6>
                         </div>
@@ -97,12 +97,20 @@
                     <ul class="list-group">
                         @foreach ($data["course"]->reviews as $review)
                         <li class="list-group-item">
-                            <h6><span class="font-weight-bold">@lang("messages.course.review.user"):</span>
-                                {{ $review->user->getName() }}</h6>
-                            <h6><span class="font-weight-bold">@lang("messages.course.review.rating"):</span>
-                                {{ $review->getRating() }}</h6>
-                            <h6><span class="font-weight-bold">@lang("messages.course.review.comment"):</span>
-                                {{ $review->getComment() }}</h6>
+                            <div class="row flex-nowrap">
+                                <div class="column px-2 w-20">
+                                    <img class="rounded img-thumbnail xsm"
+                                         src="{{ asset($review->user->getImage()) }}" alt="@lang("messages.course.image")">
+                                </div>
+                                <div class="column w-80">
+                                    <h6 class="text-wrap wrap-break"><span class="font-weight-bold">@lang("messages.course.review.user"):</span>
+                                        {{ $review->user->getName() }}</h6>
+                                    <h6 class="text-wrap wrap-break"><span class="font-weight-bold">@lang("messages.course.review.rating"):</span>
+                                        {{ $review->getRating() }}</h6>
+                                    <h6 class="text-wrap wrap-break w-100"><span class="font-weight-bold">@lang("messages.course.review.comment"):</span>
+                                        {{ $review->getComment() }}</h6>
+                                </div>
+                            </div>
                         </li>
                         @endforeach
                     </ul>

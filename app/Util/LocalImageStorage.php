@@ -29,7 +29,7 @@ class LocalImageStorage implements ImageStorage
 
             return 'storage'.'/'.$dir.$name;
         } else {
-            return 'storage/img/missing.jpeg';
+            return 'img/missing.jpeg';
         }
     }
 }
