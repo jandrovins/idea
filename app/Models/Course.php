@@ -99,10 +99,6 @@ class Course extends Model
             'price' => ['required', 'numeric', 'gte:0', 'lte:999999'],
             'summary' => ['required', 'max:1000'],
         ];
-
-        if ($request->hasFile('image')) {
-            $rules['image'] = ['required', 'file', 'image'];
-        }
         $request->validate($rules);
     }
 

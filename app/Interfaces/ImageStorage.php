@@ -19,4 +19,10 @@ interface ImageStorage
      * @return string with the internal name of the image in disk
      */
     public function store($file): string;
+
+    /**
+     * @param $content of SVG file
+     * @return string with the internal name of the image in disk
+     */
+    public function storeSVG($file): string;
 }

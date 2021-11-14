@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Util\RandomImage;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
@@ -73,6 +74,8 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $randomImage = new RandomImage();
+        $imageName = $randomImage->genImage('human', $data['name']);
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -80,6 +83,7 @@ class RegisterController extends Controller
             'dateOfBirth' => $data['dateOfBirth'],
             'phoneNumber' => $data['phoneNumber'],
             'learningStyle' => $data['learningStyle'],
+            'image' => $imageName,
         ]);
     }
 }

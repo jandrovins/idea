@@ -19,7 +19,7 @@
                         </ul>
                     </div>
                     @endif
-                    <form method="POST" id="update_course"
+                    <form method="POST" id="update_course" enctype="multipart/form-data"
                         action="{{ route('admin.courses.update', $data["course"]->getId()) }}">
                         @csrf
                         <div class="form-group">
