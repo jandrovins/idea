@@ -76,7 +76,24 @@ class CourseAdminController extends Controller
 
         $course = Course::findOrFail($id);
 
-        $course->update($request->all());
+        $imageStorage = app(ImageStorage::class);
+        // Store image and get internal name
+        $imageName = $imageStorage->store($request);
+
+        if ($imageName == asset('img/missing.jpeg')) {
+            return back()->with('error', __('messages.admin.image.create.error'));
+        }
+
+        $data = $request->only(['title', 'learningStyle', 'categories', 'author_id', 'price', 'summary']);
+
+        // Replace with internal name for image
+        if ($request->hasFile('image')) {
+            $data['image'] = $imageName;
+        } else {
+            $data['image'] = $course->getImage();
+        }
+
+        $course->update($data);
 
         return back()->with('success', __('messages.course.edit.success'));
     }
