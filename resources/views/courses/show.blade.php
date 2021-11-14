@@ -63,17 +63,17 @@
                         </div>
                         <div class="column w-70">
                             <h5 class="text-wrap wrap-break"><span class="font-weight-bold">@lang("messages.course.id"):</span>
-                                {{ $data["course"]->getId() }}</h5>
+                                {{ $data["course"]->getId() }}</h5><br>
                             <h6 class="text-wrap wrap-break"><span class="font-weight-bold">@lang("messages.course.title"):</span>
                                 {{ $data["course"]->getTitle() }}
-                            </h6>
+                            </h6><br>
                             <h6 class="text-wrap wrap-break"><span class="font-weight-bold">@lang("messages.course.author"):</span>
                                 {{ $data["course"]->author->getName() }}
-                            </h6>
+                            </h6><br>
                             <h6 class="text-wrap wrap-break"><span class="font-weight-bold">@lang("messages.course.learningStyle"):</span>
-                                {{ $data["course"]->getLearningStyle() }}</h6>
+                                {{ $data["course"]->getLearningStyle() }}</h6><br>
                             <h6 class="text-wrap wrap-break"><span class="font-weight-bold">@lang("messages.course.categories"):</span>
-                                {{ $data["course"]->getCategories() }}</h6>
+                                {{ $data["course"]->getCategories() }}</h6><br>
                             <h6 class="text-wrap wrap-break"><span class="font-weight-bold">@lang("messages.course.price"):</span>
                                 {{ $data["course"]->getPrice() }}
                             </h6>
@@ -104,11 +104,11 @@
                                 </div>
                                 <div class="column w-80">
                                     <h6 class="text-wrap wrap-break"><span class="font-weight-bold">@lang("messages.course.review.user"):</span>
-                                        {{ $review->user->getName() }}</h6>
+                                        {{ $review->user->getName() }}</h6><br>
                                     <h6 class="text-wrap wrap-break"><span class="font-weight-bold">@lang("messages.course.review.rating"):</span>
-                                        {{ $review->getRating() }}</h6>
+                                        {{ $review->getRating() }}</h6><br>
                                     <h6 class="text-wrap wrap-break w-100"><span class="font-weight-bold">@lang("messages.course.review.comment"):</span>
-                                        {{ $review->getComment() }}</h6>
+                                        {{ $review->getComment() }}</h6><br>
                                 </div>
                             </div>
                         </li>
