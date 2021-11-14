@@ -75,7 +75,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         $randomImage = new RandomImage();
-        $imageName = $randomImage->getAvatar($data['name']);
+        $imageName = $randomImage->genImage('human', $data['name']);
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],

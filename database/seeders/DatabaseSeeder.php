@@ -3,7 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-
+use App\Models\Course;
+use App\Models\User;
+use App\Util\RandomImage;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -31,5 +33,20 @@ class DatabaseSeeder extends Seeder
         } else {
             exec("mysql -u ${db['username']} -h ${db['host']} ${db['database']} < ${sqlFile}");
         }
+        $randomImage = new RandomImage();
+
+        $courses = Course::all();
+        foreach($courses as $course){
+            $imageName = $randomImage->genImage('jdenticon', $course->title);
+            $course->image = $imageName;
+            $course->save();
+        }
+        $users = User::all();
+        foreach($users as $user){
+            $imageName = $randomImage->genImage('human', $user->name);
+            $user->image = $imageName;
+            $user->save();
+        }
+
     }
 }

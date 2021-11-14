@@ -39,7 +39,7 @@ class CourseAdminController extends Controller
             $imageName = $imageStorage->store($request);
         }else{
             $randomImage = new RandomImage();
-            $imageName = $randomImage->getAvatar($request['title']);
+            $imageName = $randomImage->genImage('jdenticon', $request['title']);
         }
 
 

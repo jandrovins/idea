@@ -18,7 +18,7 @@ class UserTableSeeder extends Seeder
     {
         if (config('admin.admin_name')) {
             $randomImage = new RandomImage();
-            $imageName = $randomImage->getAvatar('admin');
+            $imageName = $randomImage->genImage('human', 'admin');
             User::firstOrCreate(
                 ['email' => config('admin.admin_email')], [
                     'name' => config('admin.admin_name'),
