@@ -59,6 +59,10 @@
                                 placeholder="@lang(
                                 "messages.course.summaryPlaceholder")">{{ old('summary', $data["course"]->getSummary()) }}</textarea>
                         </div>
+                        <div class="custom-file">
+                            <label class="custom-file-label" for="image">@lang("messages.course.image")</label>
+                            <input class="custom-file-input" type="file" name="image" id="image"/>
+                        </div>
                         <button type="submit"
                             class="btn btn-primary float-right">@lang("messages.course.edit.submit")</button>
                     </form>

@@ -90,15 +90,20 @@ class Course extends Model
         /*
             Regex for title validates alphanumeric with spaces
             Regex for categories validates comma, space and dash separated alphabetic
+            Image is optional but if a file is input it needs to be an image
          */
-        $request->validate([
+        $rules = [
             'title' => ['required', 'regex:/(^[a-zA-Z0-9 ]+$)+/'],
             'learningStyle' => ['required', 'alpha', 'max:100'],
             'categories' => ['required', 'regex:/(^[a-zA-Z, -]+$)+/', 'max:100'],
             'price' => ['required', 'numeric', 'gte:0', 'lte:999999'],
             'summary' => ['required', 'max:1000'],
-            'image' => ['required', 'file', 'image'],
-        ]);
+        ];
+
+        if ($request->hasFile('image')) {
+            $rules['image'] = ['required', 'file', 'image'];
+        }
+        $request->validate($rules);
     }
 
     public function inscriptions()
