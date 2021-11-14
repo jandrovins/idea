@@ -36,7 +36,7 @@ class CourseAdminController extends Controller
         if ($request->hasFile('image')) {
             $imageStorage = app(ImageStorage::class);
             // Store image and get internal name
-            $imageName = $imageStorage->store($request);
+            $imageName = $imageStorage->storeRequest($request);
         }else{
             $randomImage = new RandomImage();
             $imageName = $randomImage->genImage('jdenticon', $request['title']);
@@ -83,18 +83,18 @@ class CourseAdminController extends Controller
 
         $course = Course::findOrFail($id);
 
-        $imageStorage = app(ImageStorage::class);
-        // Store image and get internal name
-        $imageName = $imageStorage->store($request);
-
-        if ($imageName == 'img/missing.jpeg') {
-            return back()->with('error', __('messages.admin.image.create.error'));
-        }
-
         $data = $request->only(['title', 'learningStyle', 'categories', 'author_id', 'price', 'summary']);
 
         // Replace with internal name for image
         if ($request->hasFile('image')) {
+            $imageStorage = app(ImageStorage::class);
+            // Store image and get internal name
+            $imageName = $imageStorage->storeRequest($request);
+
+            if ($imageName == 'img/missing.jpeg') {
+                return back()->with('error', __('messages.admin.image.create.error'));
+            }
+
             $data['image'] = $imageName;
         } else {
             $data['image'] = $course->getImage();
