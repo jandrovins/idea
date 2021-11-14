@@ -14,7 +14,7 @@ class CoursesApi extends Controller
         return new CourseCollection(CourseResource::collection(Course::all()));
     }
 
-    public function randomCourse()
+    public function randomCourses()
     {
         return new CourseCollection(CourseResource::collection(Course::all()->random(10)));
     }
