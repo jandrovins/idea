@@ -11,6 +11,14 @@
     min-width: 20%;
 }
 
+.fw {
+    min-width:100%;
+      min-height:15em;
+      max-width:100%;
+      max-height:15em;
+      overflow:hidden;
+}
+
 .w-30 {
     width: 30%;
 }
@@ -72,3 +80,18 @@ table {
     word-wrap: break-word;
 }
 
+img.bg-image {
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+  }
+
+  .special-card {
+    /* create a custom class so you 
+       do not run into specificity issues 
+       against bootstraps styles
+       which tends to work better than using !important 
+       (future you will thank you later)*/
+    
+      background-color: rgba(245, 245, 245, 1);
+      opacity: .5;
+    }

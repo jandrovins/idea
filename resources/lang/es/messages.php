@@ -138,4 +138,8 @@ return [
     'user.dob' => 'Fecha de Nacimiento',
     'user.phoneNum' => 'Número Celular',
 
+    //API
+    'api.ad' =>'Anuncio proporcionado por idéa Ads',
+    'api.visit' =>'Visítalos',
+    'api.associates' =>'Nuestros Socios - FraganceStore.',
 ];

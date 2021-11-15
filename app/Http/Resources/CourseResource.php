@@ -12,7 +12,7 @@ class CourseResource extends JsonResource
             'title' => $this->getTitle(),
             'price' => $this->getPrice(),
             'summary' => $this->getSummary(),
-            'image' => asset($this->getImage())
+            'image' => asset($this->getImage()),
         ];
     }
 }

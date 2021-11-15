@@ -92,7 +92,7 @@ return [
     */
     'available_locales' => [
         'English' => 'en',
-        'Spanish' => 'es',
+        'Español' => 'es',
     ],
 
     /*
