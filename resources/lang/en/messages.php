@@ -144,4 +144,19 @@ return [
     'api.visit' =>'Visit',
     'api.associates' =>'Our Associates - FraganceStore.',
 
+    //Footer
+    'footer.about-us' =>'About Us',
+    'footer.about' =>'About',
+    'footer.about-company' =>'About the Company',
+    'footer.about-text' =>'Idéa is an app that aims to enlarge the coverage of education,
+        by applying interactive and dynamic ideas, in which improvements to the educational system
+        can be allowed by exercising international models that easy learning, from both a technical
+        and socio-emotional point of view.',
+    'footer.home' =>'Home',
+    'footer.blog' =>'Blog',
+    'footer.contact' =>'Contact',
+    'footer.copyright' =>'&copy;2021 Idéa.',
+    'footer.address' =>'#49-03. Canalave City. Sinnoh Region.',
+    'footer.phone' =>'555-4930924',
+    'footer.email' =>'admin@edu.co',
 ];
