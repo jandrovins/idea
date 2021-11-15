@@ -133,6 +133,7 @@ return [
     'student_opt' => 'Opciones de Estudiante',
     'hello' => 'Hola',
     'guest' => 'invitado',
+    'languages' => 'Idiomas',
 
     // User
     'user.dob' => 'Fecha de Nacimiento',
