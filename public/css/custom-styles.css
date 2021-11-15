@@ -100,11 +100,9 @@ img.bg-image {
     text-align: center;
     width: 100%;
     background-color: #2c292f;
-    bottom: 1em;
 }
 
 .footer-cnfg {
-    position: absolute;
     background-color: #2c292f;
 }
 
@@ -116,7 +114,17 @@ img.bg-image {
 
 #footer-pos {
     position: absolute;
+    bottom: 1em;
     margin-left: 12.2%;
     width: 87%;
-    padding-top: 20em;
+}
+
+#footer-pos.sticky-bottom {
+    position: fixed;
+    bottom: 1em;
+}
+
+#footer-pos.rel-bottom {
+    padding-top: 2em;
+    position: relative;
 }
