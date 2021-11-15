@@ -41,12 +41,12 @@
             </div>
         </div>
     </div>
-    <div class="sidebar-container">
-        <div class="flex row justify-content-center">
-            <img class="rounded img-thumbnail img-responsive sm m-2"
-                 src="{{ asset('/img/idea-logo-sm.jpeg') }}" alt="@lang("messages.course.image")">
-        </div>
-        <ul class="sidebar-navigation">
+    <div class="sidebar-container d-flex flex-column justify-content-between">
+        <ul id="top-nav" class="sidebar-navigation">
+            <div class="flex row justify-content-center">
+                <img class="rounded img-thumbnail img-responsive xsm m-2"
+                     src="{{ asset('/img/idea-logo-sm.jpeg') }}" alt="@lang("messages.course.image")">
+            </div>
             <!--Admin Sidebar-->
             @if (Auth::user() and Auth::user()->getUserKind() === 'admin')
             <li class="header">@lang('messages.admin.nav')</li>
@@ -89,10 +89,9 @@
                 </a>
             </li>
         </ul>
-        </ul>
-        <ul class="sidebar-navigation sidebar-footer">
+        <ul id="footer" class="sidebar-navigation sidebar-footer">
             @guest
-            <li class="header">@lang('messages.hello') @lang('messages.guest')</li>
+            <li class="header mt-10">@lang('messages.hello') @lang('messages.guest')</li>
             <li><a href="{{ route('login') }}">@lang('messages.auth.login')</a></li>
             <li><a href="{{ route('register') }}">@lang('messages.auth.register')</a></li>
             @else
