@@ -21,7 +21,7 @@
 <body>
 <!--Language-->
 <div class="float-right m-3">
-    <div class="dropdown">
+    <div class="dropdown mr-5">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
             @lang('messages.languages')
@@ -112,7 +112,7 @@
         </li>
     </ul>
 </div>
-<main class="py-4">
+<main id="main" class="py-4">
     @yield('content')
 </main>
 <!-- Footer -->
@@ -125,5 +125,5 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
+<script src="{{ asset('js/scripts.js') }}"></script>
 </html>
