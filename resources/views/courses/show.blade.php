@@ -3,11 +3,11 @@
 @section("title", $data["title"])
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center flex-nowrap">
         <div class="col-md-8">
             @include ('util.message')
             <div class="card">
-                <div class="card-header d-flex justify-content-between align-content-center">
+                <div class="card-header d-flex justify-content-between align-content-center flex-nowrap">
                     <span class="ellipsis w-75">{{ $data["course"]->getId() }} - {{ $data["course"]->getTitle() }}</span>
                     @if ( $data['isEnrolled'] )
                     <!-- Button for leave -->
