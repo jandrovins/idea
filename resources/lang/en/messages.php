@@ -12,6 +12,21 @@ return [
     'auth.login' => 'Log In',
     'auth.register' => 'Register',
     'auth.logout' => 'Log Out',
+    'auth.password' => 'Password',
+    'auth.confirm_password' => 'Confirm password',
+    'auth.reset_password' => 'Reset password',
+    'auth.forgot_password' => 'Forgot your password?',
+    'auth.email_address' => 'E-Mail Address',
+    'auth.send_password_reset_link' => 'Send Password Reset Link',
+    'auth.confirm_your_password_before_continuing' => 'Confirm your password before continuing.',
+    'auth.remember_me' => 'Remember Me',
+    'auth.verify_email' => 'Verify Your Email Address',
+_------
+    'auth.name' => 'Name',
+    'auth.verification_link_sent' => 'A fresh verification link has been sent to your email address.',
+    'auth.check_verification_link' => 'Before proceeding, please check your email for a verification link.',
+    'auth.if_email_not_received' => 'If you did not receive the email',
+    'auth.click_to_request_another' => 'click here to request another',
 
     // Error 404 page Specific
     'error.404.title' => 'Error 404 - Page not found',
