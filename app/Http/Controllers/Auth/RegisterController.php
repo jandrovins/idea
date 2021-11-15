@@ -33,7 +33,7 @@ class RegisterController extends Controller
      */
     protected function redorectTo()
     {
-        return redirect()->route('/index');
+        return redirect()->route('home.index');
     }
 
     /**
