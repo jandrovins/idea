@@ -21,7 +21,9 @@
                 </div>
             </div>
             <br>
+            <div class="card">
             @include('courses.topCourses')
+            </div>
             <br>
             <div class="card">
                 <div class="card-header d-flex justify-content-between align-content-center">

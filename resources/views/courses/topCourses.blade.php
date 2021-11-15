@@ -13,14 +13,14 @@
                 <div class="d-block fw">
                     <div class="card">
                         <img class="card img-fluid bg-image"
-                            src="https://images.immediate.co.uk/production/volatile/sites/4/2020/12/dino-80bbd77.jpg?quality=90&resize=768,574">
+                            src="{{ $course->getImage() }}">
                         <div class="card-img-overlay">
                             <div class="card-header text-center">
                                 <span class="font-weight-bold">{{ $course['title'] }}</span>
                             </div>
                             <div class="card special-card">
                                 <p class="card-body font-weight-bold ">
-                                    DESCRIPTION
+                                    {{ $course->getSummary() }}
                                 </p>
                             </div>
                         </div>

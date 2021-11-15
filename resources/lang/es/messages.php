@@ -148,9 +148,9 @@ return [
     'footer.about-us' =>'Acerca de Nosotros',
     'footer.about' =>'Acerca',
     'footer.about-company' =>'Acerca de la Compañía',
-    'footer.about-text' =>'Idéa es una aplicación con el propósito de ampliar la cobertura de educación, 
-        mediante ideas interactivas y dinámicas, en la cual se permita aplicar mejoras al sistema educativo 
-        por medio de la ejecución de modelos internacionales que faciliten el aprendizaje, desde un punto de 
+    'footer.about-text' =>'Idéa es una aplicación con el propósito de ampliar la cobertura de educación,
+        mediante ideas interactivas y dinámicas, en la cual se permita aplicar mejoras al sistema educativo
+        por medio de la ejecución de modelos internacionales que faciliten el aprendizaje, desde un punto de
         vista tanto técnico como socio-emocional.',
     'footer.home' =>'Inicio',
     'footer.blog' =>'Blog',
@@ -159,4 +159,5 @@ return [
     'footer.address' =>'#49-03. Canalave City. Sinnoh Region.',
     'footer.phone' =>'555-4930924',
     'footer.email' =>'admin@edu.co',
+    'fragance.error' => 'Un error ocurrió al tratar de contactar fragance-store, está su servidor caído? Por favor vuelve a intentar más tarde.',
 ];

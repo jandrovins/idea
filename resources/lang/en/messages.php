@@ -159,4 +159,5 @@ return [
     'footer.address' =>'#49-03. Canalave City. Sinnoh Region.',
     'footer.phone' =>'555-4930924',
     'footer.email' =>'admin@edu.co',
+    'fragance.error' => 'An error occurred trying to contact fragance-store, is their server down?, please try again later.',
 ];
