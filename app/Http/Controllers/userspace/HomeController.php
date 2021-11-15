@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\userspace;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Http;
 use App\Models\Course;
+use Illuminate\Support\Facades\Http;
 
 class HomeController extends Controller
 {
@@ -15,6 +15,7 @@ class HomeController extends Controller
         $data['parfum'] = $answer->json();
         $courses = Course::has('reviews')->withAvg('reviews', 'rating')->orderBy('reviews_avg_rating', 'desc')->take(3)->get();
         $data['courses'] = $courses;
+
         return view('home.index')->with('data', $data);
     }
 }

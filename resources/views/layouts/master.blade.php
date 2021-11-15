@@ -44,8 +44,8 @@
     <div class="sidebar-container d-flex flex-column justify-content-between">
         <ul id="top-nav" class="sidebar-navigation">
             <div class="flex row justify-content-center">
-                <img class="rounded img-thumbnail img-responsive xsm m-2"
-                     src="{{ asset('/img/idea-logo-sm.jpeg') }}" alt="@lang("messages.course.image")">
+                <img class="rounded img-thumbnail img-responsive xsm m-2" src="{{ asset('/img/idea-logo-sm.jpeg') }}"
+                    alt="@lang(" messages.course.image")">
             </div>
             <!--Admin Sidebar-->
             @if (Auth::user() and Auth::user()->getUserKind() === 'admin')
@@ -96,8 +96,8 @@
             <li><a href="{{ route('register') }}">@lang('messages.auth.register')</a></li>
             @else
             <div class="flex row justify-content-center">
-                <img class="rounded img-thumbnail img-responsive xsm m-2"
-                     src="{{ asset(Auth::User()->getImage()) }}" alt="@lang("messages.course.image")">
+                <img class="rounded img-thumbnail img-responsive xsm m-2" src="{{ asset(Auth::User()->getImage()) }}"
+                    alt="@lang(" messages.course.image")">
             </div>
             <li class="header">@lang('messages.hello') {{ Auth::user()->getName() }}</li>
             <li><a href="" onclick="event.preventDefault();logout.submit();">@lang('messages.auth.logout')</a></li>
@@ -112,11 +112,17 @@
             </li>
         </ul>
     </div>
+    <!-- Footer -->
+    <div id="footer-pos">
+        @include('layouts.footer')
+    </div>
+
     <main class="py-4">
         @yield('content')
     </main>
     </div>
 </body>
+
 <!-- Scripts -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>

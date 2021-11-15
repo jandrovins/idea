@@ -5,10 +5,8 @@
 namespace App\Util;
 
 use App\Interfaces\ImageStorage;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
-use function PHPUnit\Framework\arrayHasKey;
 
 class LocalImageStorage implements ImageStorage
 {
@@ -16,17 +14,19 @@ class LocalImageStorage implements ImageStorage
     {
         if ($request->hasFile('image')) {
             $file = $request->file('image');
+
             return $this->store($file);
         } else {
             return 'img/missing.jpeg';
         }
     }
 
-    public function storeSVG($content): string {
+    public function storeSVG($content): string
+    {
         $user = Auth::user();
-        if(is_null($user)){
+        if (is_null($user)) {
             $dir = 'img/general/';
-        }else{
+        } else {
             // Files uploaded by a specific user are uploaded to a directory inside storage
             $dir = 'img/'.$user->getName().$user->getId().'/';
         }
@@ -42,11 +42,12 @@ class LocalImageStorage implements ImageStorage
         return 'storage'.'/'.$dir.$name;
     }
 
-    public function store($file): string {
+    public function store($file): string
+    {
         $user = Auth::user();
-        if(is_null($user)){
+        if (is_null($user)) {
             $dir = 'img/general/';
-        }else{
+        } else {
             // Files uploaded by a specific user are uploaded to a directory inside storage
             $dir = 'img/'.$user->getName().$user->getId().'/';
         }
