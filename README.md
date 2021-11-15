@@ -78,17 +78,12 @@ php artisan key:generate
 php artisan migrate
 ```
 
-7. Create admin user in database:
+7. Create admin user and populate database (before this was done with a SQL file):
 ```bash
 php artisan db:seed
 ```
 
-8. Populate database with mock data:
-```bash
-mysql <database_name> < populateIdeaDatabase.sql
-```
-
-9. Run and enjoy!
+8. Run and enjoy!
 ```bash
 php artisan serve --port=8000 --host=0.0.0.0
 ```
