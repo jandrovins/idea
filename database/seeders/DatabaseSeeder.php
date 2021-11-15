@@ -2,10 +2,14 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use App\Models\Course;
+use App\Models\Lesson;
 use App\Models\User;
+use App\Models\Review;
+use App\Models\Inscription;
 use App\Util\RandomImage;
+use Illuminate\Database\Seeder;
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -16,37 +20,10 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(UserTableSeeder::class);
-
-        // Create all entries from populateIdeaDatabase.sql
-
-        $sqlFile = './populateIdeaDatabase.sql';
-
-        $db = [
-            'username' => env('DB_USERNAME'),
-            'password' => env('DB_PASSWORD'),
-            'host' => env('DB_HOST'),
-            'database' => env('DB_DATABASE'),
-        ];
-
-        if (strlen($db['password']) > 0) {
-            exec("mysql -u ${db['username']} -p${db['password']} -h ${db['host']} ${db['database']} < ${sqlFile}");
-        } else {
-            exec("mysql -u ${db['username']} -h ${db['host']} ${db['database']} < ${sqlFile}");
-        }
-        $randomImage = new RandomImage();
-
-        $courses = Course::all();
-        foreach($courses as $course){
-            $imageName = $randomImage->genImage('jdenticon', $course->title);
-            $course->image = $imageName;
-            $course->save();
-        }
-        $users = User::all();
-        foreach($users as $user){
-            $imageName = $randomImage->genImage('human', $user->name);
-            $user->image = $imageName;
-            $user->save();
-        }
-
+        User::factory()->count(50)->create();
+        Course::factory()->count(10)->create();
+        Inscription::factory()->count(100)->create();
+        Review::factory()->count(50)->create();
+        Lesson::factory()->count(50)->create();
     }
 }
