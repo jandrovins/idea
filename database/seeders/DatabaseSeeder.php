@@ -3,11 +3,10 @@
 namespace Database\Seeders;
 
 use App\Models\Course;
-use App\Models\Lesson;
-use App\Models\User;
-use App\Models\Review;
 use App\Models\Inscription;
-use App\Util\RandomImage;
+use App\Models\Lesson;
+use App\Models\Review;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder

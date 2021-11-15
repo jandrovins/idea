@@ -37,11 +37,10 @@ class CourseAdminController extends Controller
             $imageStorage = app(ImageStorage::class);
             // Store image and get internal name
             $imageName = $imageStorage->storeRequest($request);
-        }else{
+        } else {
             $randomImage = new RandomImage();
             $imageName = $randomImage->genImage('jdenticon', $request['title']);
         }
-
 
         if ($imageName == asset('img/missing.jpeg')) {
             return back()->with('error', __('messages.admin.image.create.error'));
