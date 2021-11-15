@@ -25,9 +25,17 @@ class CourseFactory extends Factory
      */
     public function definition()
     {
-        $hw = ['Human ', 'Animal ', 'Dinosaur ', 'Celestial ', 'Forsaken ', 'Ilegal '];
-        $subject = ['history ', 'technology ', 'science ', 'culture ', 'astronomy ', 'whitchcraft ', 'husbandry '];
-        $secSbj = ['in the 1970s', 'in america', 'in Colombia', 'about dogs', 'about anime', 'about memes'];
+        $hw = ['Human ', 'Animal ', 'Dinosaur ', 'Celestial ', 'Forsaken ', 'Ilegal '.'Fairy ','Simon\'s ','Militar ',
+                'Magical ','Fantastic ','Adamant ','Mavis\' ', 'Spiritual ','Clase de ','Gray '.'Red ','Blue ',
+                'Velociraptor ','Eustreptospondylus ','Gargoyle ','Royal ','Imperial ','Miraculous ','Brilliant ',
+                'Computational ','Rethorical ','Methaforical ','Academical ','Christmas ','Halloween ','Easter'];
+        $subject = ['history ', 'technology ', 'science ', 'culture ', 'astronomy ', 'whitchcraft ', 'husbandry ','magic ',
+                    'Civil War ','computation ','cinema ','pets ','sports ','astrology ','clod ','diamond ', 'hunting ',
+                    'marriage ','mathematics ','theatre ','musicology ','mythology ','botany ','anatomy ','zoology ',
+                    'scientology ','philosophy ','psycology ','calculus ','analysis ','genetics ','studies ','paleonthology'];
+        $secSbj = ['in the 1970s ', 'in America ', 'in Colombia ', 'Vol. 3 '. '101 ', 'Part II ', '- The Sequel ','- Strikes Back ',
+                    '& Knuckles ','Funky mode ','- A True Story ','- The Theatrical Experience ', '- The Musical ','in Spanish',
+                    'in space ','in a Galaxy Far Far Away...','as seen in TV ','owned by Disney '];
         $learningStyles = ['auditive', 'visual', 'kinesthetic'];
 
         $randomImg = new RandomImage();
