@@ -4,11 +4,14 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
 class Review extends Model
 {
+    use HasFactory;
+
     //attributes id, rating, comment, created_at, updated_at, user_id, course_id
     protected $fillable = ['rating', 'comment', 'user_id', 'course_id'];
 
