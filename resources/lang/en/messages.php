@@ -139,4 +139,9 @@ return [
     'user.dob' => 'Date Of Birth',
     'user.phoneNum' => 'Phone Number',
 
+    //API
+    'api.ad' =>'Ad provided by idéa Ads',
+    'api.visit' =>'Visit',
+    'api.associates' =>'Our Associates - FraganceStore.',
+
 ];
