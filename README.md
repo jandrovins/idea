@@ -83,7 +83,12 @@ php artisan migrate
 php artisan db:seed
 ```
 
-8. Run and enjoy!
+8. Run tests.
+```bash
+php artisan test
+```
+
+9. Run and enjoy!
 ```bash
 php artisan serve --port=8000 --host=0.0.0.0
 ```
