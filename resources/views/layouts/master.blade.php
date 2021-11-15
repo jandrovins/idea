@@ -20,11 +20,11 @@
 
 <body>
     <!--Language-->
-    <div class="float-right">
+    <div class="float-right m-3">
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
-                @Lang('languages')
+                @lang('messages.languages')
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
                 @foreach(config('app.available_locales') as $locale_name => $available_locale)
@@ -42,6 +42,10 @@
         </div>
     </div>
     <div class="sidebar-container">
+        <div class="flex row justify-content-center">
+            <img class="rounded img-thumbnail img-responsive sm m-2"
+                 src="{{ asset('/img/idea-logo-sm.jpeg') }}" alt="@lang("messages.course.image")">
+        </div>
         <ul class="sidebar-navigation">
             <!--Admin Sidebar-->
             @if (Auth::user() and Auth::user()->getUserKind() === 'admin')
@@ -102,6 +106,11 @@
                 @csrf
             </form>
             @endguest
+            <li class="header">
+                <a class="mx-4" href="https://github.com/jandrovins/idea">
+                    <i class="fa fa-3x fa-github"></i>
+                </a>
+            </li>
         </ul>
     </div>
     <main class="py-4">
