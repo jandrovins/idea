@@ -28,7 +28,7 @@ class CourseFactory extends Factory
         $hw = ['Human ', 'Animal ', 'Dinosaur ', 'Celestial ', 'Forsaken ', 'Ilegal '.'Fairy ','Simon\'s ','Militar ',
                 'Magical ','Fantastic ','Adamant ','Mavis\' ', 'Spiritual ','Clase de ','Gray '.'Red ','Blue ',
                 'Velociraptor ','Eustreptospondylus ','Gargoyle ','Royal ','Imperial ','Miraculous ','Brilliant ',
-                'Computational ','Rethorical ','Methaforical ','Academical ','Christmas ','Halloween ','Easter'];
+                'Computational ','Rethorical ','Methaforical ','Academical ','Christmas ','Halloween ','Easter '];
         $subject = ['history ', 'technology ', 'science ', 'culture ', 'astronomy ', 'whitchcraft ', 'husbandry ','magic ',
                     'Civil War ','computation ','cinema ','pets ','sports ','astrology ','clod ','diamond ', 'hunting ',
                     'marriage ','mathematics ','theatre ','musicology ','mythology ','botany ','anatomy ','zoology ',
