@@ -29,7 +29,7 @@ class LessonFactory extends Factory
         $subject = ['Humans ', 'Animals ', 'Dinosaurs ', 'Celestials ', 'Forsaken ', 'Ilegal '.'Fairies ','Simon ','Military ',
         'Magical beigns ','Fantastic beasts ','Adamant gems ','Mavis  ', 'Spiritual ghosts ','Clase de ','Gray '.'Red ','Blue ',
         'Velociraptors ','Eustreptospondylus ','Gargoyles ','Royalty ','Imperials ','Miraculous holders ','Brilliant man ',
-        'Computational madness','A ethorical question','Methafor ','Academy ','Christmas ','Halloween ','Easter'];
+        'Computational madness','A ethorical question','Methafor ','Academy ','Christmas ','Halloween ','Easter '];
         $secVerb = ['defeat ', 'treat ', 'help ', 'discover ', 'use ', 'make illegal ', 'legalize ','destroy ','buy ', 'hit ',
                     'sue ','watch ','marry ','replace ','help ','wish ','laugh at ','love ','hate ','play with ','cry about '];
         $pred = ['in the 1970s ', 'in America ', 'in Colombia ', 'Vol. 3 '. '101 ', 'Part II ', '- The Sequel ','- Strikes Back ',
