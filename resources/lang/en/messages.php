@@ -21,7 +21,6 @@ return [
     'auth.confirm_your_password_before_continuing' => 'Confirm your password before continuing.',
     'auth.remember_me' => 'Remember Me',
     'auth.verify_email' => 'Verify Your Email Address',
-_------
     'auth.name' => 'Name',
     'auth.verification_link_sent' => 'A fresh verification link has been sent to your email address.',
     'auth.check_verification_link' => 'Before proceeding, please check your email for a verification link.',
