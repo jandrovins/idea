@@ -12,6 +12,21 @@ return [
     'auth.login' => 'Ingresar',
     'auth.register' => 'Registro',
     'auth.logout' => 'Cerrar Sesión',
+    'auth.password' => 'Contraseña',
+    'auth.confirm_password' => 'Confirmar contraseña',
+    'auth.reset_password' => 'Reiniciar contraseña',
+    'auth.forgot_password' => 'Olvidaste tu contraseña?',
+    'auth.email_address' => 'Dirección E-Mail',
+    'auth.send_password_reset_link' => 'Enviar Link de Reinicio de Contraseña',
+    'auth.confirm_your_password_before_continuing' => 'Confirma tu contraseña antes de continuar.',
+    'auth.remember_me' => 'Recuérdame',
+    'auth.verify_email' => 'Verifica tu e-mail',
+    'auth.name' => 'Nombre',
+    'auth.verification_link_sent' => 'Un nuevo enlace de verificación fue enviado a to email.',
+    'auth.check_verification_link' => 'Antes de proceder, por favor revisa to email for un enlace de verificación.',
+    'auth.if_email_not_received' => 'Si no recibiste el enlace.',
+    'auth.click_to_request_another' => 'presiona aquí para recibir uno nuevo.',
+
 
     // Error 404 page Specific
     'error.404.title' => 'NO HAY NADA',
