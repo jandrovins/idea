@@ -27,7 +27,6 @@ return [
     'auth.if_email_not_received' => 'Si no recibiste el enlace.',
     'auth.click_to_request_another' => 'presiona aquí para recibir uno nuevo.',
 
-
     // Error 404 page Specific
     'error.404.title' => 'NO HAY NADA',
 

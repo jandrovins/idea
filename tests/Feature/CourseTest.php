@@ -2,10 +2,8 @@
 
 namespace Tests\Feature;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Tests\TestCase;
 use App\Models\Course;
+use Tests\TestCase;
 
 class CourseTest extends TestCase
 {
@@ -18,7 +16,7 @@ class CourseTest extends TestCase
     public function testImagesInCourses()
     {
         $courses = Course::factory()->count(10)->make();
-        foreach($courses as $course){
+        foreach ($courses as $course) {
             $this->assertTrue($course->getImage() != '/img/missing.jpeg');
         }
     }
